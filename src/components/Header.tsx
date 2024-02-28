@@ -42,7 +42,7 @@ const Header = () => {
       </div>
       <ul className="flex items-center justify-between w-full md:w-1/3 mt-4 mx-12">
         <li className="hover:-translate-y-2 duration-500 transition-all">
-          <Link href="/" className="text-sm md:text-base lg:text-xl">
+          <Link href="/about" className="text-sm md:text-base lg:text-xl">
             About
           </Link>
         </li>

@@ -14,6 +14,14 @@ const HomePage = () => {
         <div className="py-10">
           <Search />
         </div>
+        <p>
+          Maybe some more context here about the project? Don't want main page
+          to be too clunky but might be good for SEO. compare to other websites
+        </p>
+        <p>
+          Also might need to put each of these little sections into own
+          components, will need to see
+        </p>
       </div>
     </section>
   );
