@@ -47,8 +47,8 @@ const Header = () => {
           </Link>
         </li>
         <li className="hover:-translate-y-2 duration-500 transition-all">
-          <Link href="/" className="text-sm md:text-base lg:text-xl">
-            MP A-Z
+          <Link href="/mps" className="text-sm md:text-base lg:text-xl">
+            MP List
           </Link>
         </li>
         <li className="hover:-translate-y-2 duration-500 transition-all">
