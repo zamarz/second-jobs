@@ -2,8 +2,8 @@ import Image from "next/image";
 
 const MPCard = ({ mpInfo }: any) => {
   return (
-    <div>
-      <div>
+    <div className="py-3 mx-auto">
+      <div className="items-center text-center py-3 mx-auto">
         <Image
           src={mpInfo.thumbnailUrl}
           alt="An image of the MP"
@@ -12,6 +12,7 @@ const MPCard = ({ mpInfo }: any) => {
         />
         <h3>{mpInfo.nameDisplayAs}</h3>
         <p>Party: {mpInfo.latestParty.name}</p>
+        <button className="button">See Expenses</button>
       </div>
     </div>
   );

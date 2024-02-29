@@ -21,10 +21,11 @@ const Mps = () => {
   return (
     <section className="min-h-screen px-10 py-10 mx-auto container">
       <div className="flex flex-col text-center justify-center items-center py-10">
-        Find an MP by their last name (?)
+        Find an MP by their last name (?) May need to use the search api to
+        define a MP. What you see below are examples
       </div>
 
-      <div>
+      <div className="flex flex-wrap py-3">
         {mpData?.map((mp: any) => {
           return <MPCard key={mp.value.id} mpInfo={mp.value} />;
         })}
