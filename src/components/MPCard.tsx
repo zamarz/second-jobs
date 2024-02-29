@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const MPCard = ({ mpInfo }: any) => {
   return (
@@ -12,7 +13,9 @@ const MPCard = ({ mpInfo }: any) => {
         />
         <h3>{mpInfo.nameDisplayAs}</h3>
         <p>Party: {mpInfo.latestParty.name}</p>
-        <button className="button">See Expenses</button>
+        <button className="button">
+          <Link href={`/mps/${mpInfo.id}`}>See Expenses</Link>
+        </button>
       </div>
     </div>
   );
