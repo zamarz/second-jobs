@@ -1,13 +1,12 @@
 const axios = require("axios");
 
 const parliamentSite = axios.create({
-  baseURL:
-    "https://members-api.parliament.uk/api/Members/4639/RegisteredInterests",
+  baseURL: "https://members-api.parliament.uk/api/Members",
 });
 
 export const getMPs = () => {
   return parliamentSite
-    .get()
+    .get("/Search?IsCurrentMember=true&House=1")
     .then(({ data }) => {
       return data;
     })
@@ -16,13 +15,15 @@ export const getMPs = () => {
     });
 };
 
-export async function getPracticeMPs() {
-  const trial = await axios
-    .get(
-      "https://members-api.parliament.uk/api/Members/4639/RegisteredInterests"
-    )
-    .then((response) => {
-      console.log(response);
+export const getMPExpenses = (mp_id) => {
+  return parliamentSite
+    .get(`/${mp_id}/RegisteredInterests`)
+    .then(({ data }) => {
+      return data;
+    })
+    .catch(({ err }) => {
+      return err.data;
     });
-  return trial;
-}
+};
+
+// /4639/RegisteredInterests
