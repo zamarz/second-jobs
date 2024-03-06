@@ -1,10 +1,27 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import MPChildInterestAnalysis from "./MPChildInterestAnalysis";
 
 const MPEmploymentEarnings = ({ earningsInfo }: any) => {
   const [earnings, setEarnings] = useState(0);
+  const [arrayEarnings, setArrayEarnings] = useState([]);
   const [hours, setHours] = useState(0);
+
+  let earningsArray: any = [];
+
+  useEffect(() => {
+    sumEarnings(earningsArray);
+  }, [earningsArray]);
+
+  const sumEarnings = (earningsArray: any) => {
+    const newEarnings = earningsArray.map((earning: any) => {
+      return parseFloat(earning.replace(/,/g, ""));
+    });
+
+    const addEarnings = newEarnings.reduce((a: number, b: number) => a + b);
+
+    setEarnings(addEarnings);
+  };
 
   return (
     <div>
@@ -21,10 +38,21 @@ const MPEmploymentEarnings = ({ earningsInfo }: any) => {
 
               {secondJob.childInterests.length > 0 ? (
                 secondJob.childInterests.map((childInterest: any) => {
+                  const regexAmount = /£([\d,]+)/g;
+                  const priceEarnings =
+                    childInterest.interest.match(regexAmount);
+                  const removePound = priceEarnings[0].slice(
+                    1,
+                    priceEarnings[0].length
+                  );
+
+                  earningsArray.push(removePound);
                   return (
                     <MPChildInterestAnalysis
                       key={childInterest.id}
                       childInterestInfo={childInterest}
+                      setArrayEarnings={setArrayEarnings}
+                      arrayEarnings={arrayEarnings}
                     />
                   );
                 })
@@ -37,7 +65,7 @@ const MPEmploymentEarnings = ({ earningsInfo }: any) => {
           );
         })}
         <div className="text-xl py-5">
-          <div>Total Earnings: 0</div>
+          <div>Total Earnings: £{earnings}</div>
           <div>Total Hours: 0</div>
         </div>
       </div>
