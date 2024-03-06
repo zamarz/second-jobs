@@ -15,6 +15,17 @@ export const getMPs = () => {
     });
 };
 
+export const getMPById = (mp_id) => {
+  return parliamentSite
+    .get(`/${mp_id}`)
+    .then(({ data }) => {
+      return data;
+    })
+    .catch(({ err }) => {
+      return err.data;
+    });
+};
+
 export const getMPExpenses = (mp_id) => {
   return parliamentSite
     .get(`/${mp_id}/RegisteredInterests`)
