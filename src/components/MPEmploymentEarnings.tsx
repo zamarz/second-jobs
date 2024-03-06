@@ -4,7 +4,6 @@ import MPChildInterestAnalysis from "./MPChildInterestAnalysis";
 
 const MPEmploymentEarnings = ({ earningsInfo }: any) => {
   const [earnings, setEarnings] = useState(0);
-  const [arrayEarnings, setArrayEarnings] = useState([]);
   const [hours, setHours] = useState(0);
 
   let earningsArray: any = [];
@@ -51,8 +50,6 @@ const MPEmploymentEarnings = ({ earningsInfo }: any) => {
                     <MPChildInterestAnalysis
                       key={childInterest.id}
                       childInterestInfo={childInterest}
-                      setArrayEarnings={setArrayEarnings}
-                      arrayEarnings={arrayEarnings}
                     />
                   );
                 })
