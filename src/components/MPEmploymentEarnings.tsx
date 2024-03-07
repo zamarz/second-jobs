@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import MPChildInterestAnalysis from "./MPChildInterestAnalysis";
-import { earningsCalculator } from "@/app/utils/functions";
+import { earningsAggregator, sumEarnings } from "@/app/utils/functions";
 
 const MPEmploymentEarnings = ({ earningsInfo }: any) => {
   const [earnings, setEarnings] = useState(0);
@@ -10,18 +10,8 @@ const MPEmploymentEarnings = ({ earningsInfo }: any) => {
   let earningsArray: any = ["0"];
 
   useEffect(() => {
-    sumEarnings(earningsArray);
+    sumEarnings(earningsArray, setEarnings);
   }, [earningsArray]);
-
-  const sumEarnings = (earningsArray: any) => {
-    const newEarnings = earningsArray.map((earning: any) => {
-      return parseFloat(earning.replace(/,/g, ""));
-    });
-
-    const addEarnings = newEarnings.reduce((a: number, b: number) => a + b);
-
-    setEarnings(addEarnings);
-  };
 
   return (
     <div>
@@ -30,7 +20,7 @@ const MPEmploymentEarnings = ({ earningsInfo }: any) => {
       </h4>
       <div className="text-center py-3 mx-auto">
         {earningsInfo.interests.map((secondJob: any) => {
-          earningsCalculator(secondJob, earningsArray);
+          earningsAggregator(secondJob, earningsArray);
           return (
             <div>
               <h3 className="font-semibold mx-auto py-3">
@@ -39,7 +29,7 @@ const MPEmploymentEarnings = ({ earningsInfo }: any) => {
 
               {secondJob.childInterests.length > 0 ? (
                 secondJob.childInterests.map((childInterest: any) => {
-                  earningsCalculator(childInterest, earningsArray);
+                  earningsAggregator(childInterest, earningsArray);
 
                   return (
                     <MPChildInterestAnalysis

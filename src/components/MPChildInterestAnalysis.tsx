@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { earningsCalculator } from "../app/utils/functions";
+import { earningsAggregator, sumEarnings } from "../app/utils/functions";
 
 const MPChildInterestAnalysis = ({ childInterestInfo }: any) => {
   console.log(childInterestInfo, "childinterestinfo");
@@ -11,20 +11,10 @@ const MPChildInterestAnalysis = ({ childInterestInfo }: any) => {
   let childInterestEarningsArray: any = [];
 
   useEffect(() => {
-    sumEarnings(childInterestEarningsArray);
+    sumEarnings(childInterestEarningsArray, setChildInterestEarnings);
   }, [childInterestEarningsArray]);
 
-  const sumEarnings = (childInterestEarningsArray: any) => {
-    const newEarnings = childInterestEarningsArray.map((earning: any) => {
-      return parseFloat(earning.replace(/,/g, ""));
-    });
-
-    const addEarnings = newEarnings.reduce((a: number, b: number) => a + b);
-
-    setChildInterestEarnings(addEarnings);
-  };
-
-  earningsCalculator(childInterestInfo, childInterestEarningsArray);
+  earningsAggregator(childInterestInfo, childInterestEarningsArray);
 
   return (
     <div>
