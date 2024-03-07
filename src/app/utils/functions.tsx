@@ -17,3 +17,25 @@ export const sumEarnings = (arrayofEarnings: any, stateFunction: any) => {
 
   stateFunction(addEarnings);
 };
+
+export const hoursAggregator = (array1: any, array2: any) => {
+  const regexHours = /Hours: (\d+(?:\.\d+)?)(?: hrs| mins|hours| hr)/;
+  const hoursMatch = array1.interest.match(regexHours);
+
+  if (hoursMatch) {
+    const number = parseFloat(hoursMatch[1]);
+    const containsMinutes = array1.interest.includes("mins");
+    const hours = containsMinutes ? number / 60 : number;
+    array2.push(hours);
+  }
+};
+
+export const sumHours = (arrayofHours: any, stateFunction: any) => {
+  const newHours = arrayofHours.map((hour: string) => {
+    return parseFloat(hour);
+  });
+
+  const addHours = newHours.reduce((a: number, b: number) => a + b);
+
+  stateFunction(addHours);
+};
