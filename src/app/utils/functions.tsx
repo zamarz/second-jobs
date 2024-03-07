@@ -39,3 +39,24 @@ export const sumHours = (arrayofHours: any, stateFunction: any) => {
 
   stateFunction(addHours);
 };
+
+export const valueAggregator = (array1: any, array2: any) => {
+  const regexValue = /(donation in kind:| value:|value) £(\d+(?:\.|,\d+)?)/;
+  const valueMatch = array1.interest.match(regexValue);
+  console.log(valueMatch);
+  if (valueMatch) {
+    const number = valueMatch[2];
+
+    array2.push(number);
+  }
+};
+
+export const valueSum = (arrayofValues: any, stateFunction: any) => {
+  const newValues = arrayofValues.map((value: string) => {
+    return parseFloat(value.replace(/,/g, ""));
+  });
+
+  const addValues = newValues.reduce((a: number, b: number) => a + b);
+
+  stateFunction(addValues);
+};

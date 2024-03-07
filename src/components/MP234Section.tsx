@@ -1,6 +1,19 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import MP234Analysis from "./MP234Analysis";
+import { valueAggregator, valueSum } from "@/app/utils/functions";
 
 const MP234Section = ({ interestInfo }: any) => {
+  const [values, setValues] = useState(0);
+
+  let valuesArray: any = ["0"];
+
+  useEffect(() => {
+    valueSum(valuesArray, setValues);
+  }, [valuesArray]);
+  //   valueAggregator(interestInfo, valuesArray);
+
   return (
     <div>
       <h4 className="font-bold text-xl text-center py-3">
@@ -12,7 +25,7 @@ const MP234Section = ({ interestInfo }: any) => {
         })}
       </div>
       <div className="text-center text-xl font-bold py-3 mx-auto">
-        Total Value: £0
+        Total Value: £{values}
       </div>
     </div>
   );
