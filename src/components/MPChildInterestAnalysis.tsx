@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { earningsCalculator } from "../app/utils/functions";
 
 const MPChildInterestAnalysis = ({ childInterestInfo }: any) => {
   console.log(childInterestInfo, "childinterestinfo");
@@ -23,16 +24,14 @@ const MPChildInterestAnalysis = ({ childInterestInfo }: any) => {
     setChildInterestEarnings(addEarnings);
   };
 
-  const regexAmount = /£([\d,]+)/g;
-  const priceEarnings = childInterestInfo.interest.match(regexAmount);
-  const removePound = priceEarnings[0].slice(1, priceEarnings[0].length);
-  childInterestEarningsArray.push(removePound);
+  earningsCalculator(childInterestInfo, childInterestEarningsArray);
 
   return (
     <div>
       <div className="py-2 mx-auto">
         <div>{childInterestInfo.interest}</div>
         <div>Earnings: £{childInterestEarnings}</div>
+        <div>Hours: </div>
       </div>
     </div>
   );

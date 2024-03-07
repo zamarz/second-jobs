@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import MPChildInterestAnalysis from "./MPChildInterestAnalysis";
+import { earningsCalculator } from "@/app/utils/functions";
 
 const MPEmploymentEarnings = ({ earningsInfo }: any) => {
   const [earnings, setEarnings] = useState(0);
@@ -37,15 +38,8 @@ const MPEmploymentEarnings = ({ earningsInfo }: any) => {
 
               {secondJob.childInterests.length > 0 ? (
                 secondJob.childInterests.map((childInterest: any) => {
-                  const regexAmount = /£([\d,]+)/g;
-                  const priceEarnings =
-                    childInterest.interest.match(regexAmount);
-                  const removePound = priceEarnings[0].slice(
-                    1,
-                    priceEarnings[0].length
-                  );
+                  earningsCalculator(childInterest, earningsArray);
 
-                  earningsArray.push(removePound);
                   return (
                     <MPChildInterestAnalysis
                       key={childInterest.id}
@@ -56,8 +50,6 @@ const MPEmploymentEarnings = ({ earningsInfo }: any) => {
               ) : (
                 <></>
               )}
-              <div> Earnings: 0</div>
-              <div> Hours: 0</div>
             </div>
           );
         })}
