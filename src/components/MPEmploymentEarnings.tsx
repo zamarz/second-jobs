@@ -7,7 +7,7 @@ const MPEmploymentEarnings = ({ earningsInfo }: any) => {
   const [earnings, setEarnings] = useState(0);
   const [hours, setHours] = useState(0);
 
-  let earningsArray: any = [];
+  let earningsArray: any = ["0"];
 
   useEffect(() => {
     sumEarnings(earningsArray);
@@ -30,6 +30,7 @@ const MPEmploymentEarnings = ({ earningsInfo }: any) => {
       </h4>
       <div className="text-center py-3 mx-auto">
         {earningsInfo.interests.map((secondJob: any) => {
+          earningsCalculator(secondJob, earningsArray);
           return (
             <div>
               <h3 className="font-semibold mx-auto py-3">
