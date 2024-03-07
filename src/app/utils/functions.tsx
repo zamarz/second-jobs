@@ -43,7 +43,6 @@ export const sumHours = (arrayofHours: any, stateFunction: any) => {
 export const valueAggregator = (array1: any, array2: any) => {
   const regexValue = /(donation in kind:| value:|value) £(\d+(?:\.|,\d+)?)/;
   const valueMatch = array1.interest.match(regexValue);
-  console.log(valueMatch);
   if (valueMatch) {
     const number = valueMatch[2];
 

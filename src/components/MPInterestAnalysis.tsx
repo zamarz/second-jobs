@@ -16,11 +16,13 @@ const MPInterestAnalysis = ({ interestInfo }: any) => {
         <MP234Section interestInfo={interestInfo} />
       ) : (
         <div>
-          <h4 className="font-bold text-xl">{interestInfo.name}</h4>
+          <h4 className="font-bold text-xl text-center py-3 mx-auto">
+            {interestInfo.name}
+          </h4>
           <div>
             {interestInfo.interests.map((secondJob: any) => {
               return (
-                <div>
+                <div className="text-center py-3 mx-auto">
                   <h3>{secondJob.interest}</h3>
 
                   {secondJob.childInterests.length > 0 ? (
