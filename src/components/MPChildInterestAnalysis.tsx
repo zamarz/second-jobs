@@ -9,8 +9,6 @@ import {
 } from "../app/utils/functions";
 
 const MPChildInterestAnalysis = ({ childInterestInfo }: any) => {
-  console.log(childInterestInfo, "childinterestinfo");
-
   const [childInterestEarnings, setChildInterestEarnings] = useState(0);
   const [childInterestHours, setChildInterestHours] = useState(0);
 
