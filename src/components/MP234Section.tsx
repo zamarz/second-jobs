@@ -12,7 +12,6 @@ const MP234Section = ({ interestInfo }: any) => {
   useEffect(() => {
     valueSum(valuesArray, setValues);
   }, [valuesArray]);
-  //   valueAggregator(interestInfo, valuesArray);
 
   return (
     <div>
@@ -21,6 +20,7 @@ const MP234Section = ({ interestInfo }: any) => {
       </h4>
       <div>
         {interestInfo.interests.map((secondJob: any) => {
+          valueAggregator(secondJob, valuesArray);
           return <MP234Analysis id={secondJob.id} secondJob={secondJob} />;
         })}
       </div>
