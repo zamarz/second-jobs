@@ -29,7 +29,7 @@ const MPCardIDPage = ({ mpInfo }: any) => {
             href={`https://members.parliament.uk/member/${mpInfo.id}/registeredinterests`}
             target="_blank"
           >
-            See this on Parliament's website
+            See on Parliament's website
           </Link>
         </button>
       </div>
