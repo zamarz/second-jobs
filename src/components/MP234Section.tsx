@@ -14,7 +14,7 @@ const MP234Section = ({ interestInfo }: any) => {
   }, [valuesArray]);
 
   return (
-    <div>
+    <div className="py-3">
       <h4 className="font-bold text-3xl text-center py-3 mx-auto">
         {interestInfo.name}
       </h4>
@@ -24,7 +24,7 @@ const MP234Section = ({ interestInfo }: any) => {
           return <MP234Analysis id={secondJob.id} secondJob={secondJob} />;
         })}
       </div>
-      <div className="text-center text-2xl py-3 mx-auto bg-tertiary-dark">
+      <div className="text-center text-2xl py-3 mx-auto bg-tertiary-dark w-1/3 outline">
         <span className="font-bold">Total Value:</span> £{values}
       </div>
     </div>

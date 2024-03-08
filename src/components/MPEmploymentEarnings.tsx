@@ -52,7 +52,7 @@ const MPEmploymentEarnings = ({ earningsInfo }: any) => {
             </div>
           );
         })}
-        <div className="text-3xl py-5 text-center bg-tertiary-dark">
+        <div className="text-3xl py-5 text-center bg-tertiary-dark outline mx-auto w-1/2">
           <div className="py-2 mx-auto">
             <span className="font-bold">Total Earnings:</span> £{earnings}
           </div>
