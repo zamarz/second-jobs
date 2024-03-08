@@ -1,12 +1,11 @@
+import Loading from "@/app/loading";
 import Image from "next/image";
 import Link from "next/link";
 
 const MPCard = ({ mpInfo }: any) => {
   if (mpInfo === undefined) {
-    return <div>Loading...</div>;
+    return <Loading />;
   }
-
-  //need to make this into loading spinner
 
   return (
     <div className="py-3 mx-auto">

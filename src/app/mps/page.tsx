@@ -2,11 +2,14 @@
 import { useEffect, useState } from "react";
 import { getMPs } from "../utils/api";
 import MPCard from "@/components/MPCard";
+import Loading from "../loading";
 
 const Mps = () => {
   const [mpData, setMPData] = useState<Array<any> | null>(null);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    setLoading(true);
     getMPs()
       .then((data: any) => {
         setMPData(data.items);
@@ -14,7 +17,12 @@ const Mps = () => {
       .catch((err: any) => {
         console.log(err);
       });
+    setLoading(false);
   }, []);
+
+  if (loading) {
+    return <Loading />;
+  }
 
   return (
     <section className="min-h-screen px-10 py-10 mx-auto container">
