@@ -15,7 +15,6 @@ const MPInterestCard = ({ mpInterestInfo }: any) => {
       </div>
     );
   }
-  console.log(mpInterestInfo);
 
   return (
     <section>

@@ -1,7 +1,7 @@
 "use client";
 
 import { getMPExpenses, getMPById } from "@/app/utils/api";
-import MPCard from "@/components/MPCard";
+import MPCardIDPage from "@/components/MPCardIDPage";
 import MPInterestCard from "@/components/MPExpenses";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -31,8 +31,12 @@ const MPExpensesPage = () => {
   return (
     <section>
       <div>
-        <div className="flex">
-          <MPCard key={singleMPData?.value.id} mpInfo={singleMPData?.value} />;
+        <div className="">
+          <MPCardIDPage
+            key={singleMPData?.value.id}
+            mpInfo={singleMPData?.value}
+          />
+          ;
         </div>
         <div>
           <MPInterestCard mpInterestInfo={MPInterestData} />
