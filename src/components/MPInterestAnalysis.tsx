@@ -15,7 +15,7 @@ const MPInterestAnalysis = ({ interestInfo }: any) => {
         interestInfo.name === "4. Visits outside the UK" ? (
         <MP234Section interestInfo={interestInfo} />
       ) : (
-        <div>
+        <div className="mx-auto w-1/2">
           <h4 className="font-bold text-3xl text-center py-3 mx-auto">
             {interestInfo.name}
           </h4>
