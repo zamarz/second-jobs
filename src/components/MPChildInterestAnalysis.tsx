@@ -25,10 +25,14 @@ const MPChildInterestAnalysis = ({ childInterestInfo }: any) => {
 
   return (
     <div>
-      <div className="py-2 mx-auto">
-        <div>{childInterestInfo.interest}</div>
-        <div>Earnings: £{childInterestEarnings}</div>
-        <div>Hours: {childInterestHours}</div>
+      <div className="py-2 mx-auto text-center text-xl text-balance">
+        <div className="py-2 mx-auto">{childInterestInfo.interest}</div>
+        <div className="py-2 mx-auto">
+          <span className="font-bold">Earnings:</span> £{childInterestEarnings}
+        </div>
+        <div className="py-2 mx-auto">
+          <span className="font-bold">Hours:</span> {childInterestHours}
+        </div>
       </div>
     </div>
   );

@@ -22,16 +22,16 @@ const MPEmploymentEarnings = ({ earningsInfo }: any) => {
 
   return (
     <div>
-      <h4 className="font-bold text-xl py-3 mx-auto text-center">
+      <h4 className="font-bold text-3xl py-3 mx-auto text-center">
         {earningsInfo.name}
       </h4>
-      <div className="text-center py-3 mx-auto">
+      <div className="py-3 mx-auto">
         {earningsInfo.interests.map((secondJob: any) => {
           earningsAggregator(secondJob, earningsArray);
           hoursAggregator(secondJob, hoursArray);
           return (
             <div>
-              <h3 className="font-semibold mx-auto py-3">
+              <h3 className="font-semibold mx-auto py-3 text-center text-xl text-balance underline">
                 {secondJob.interest}
               </h3>
 

@@ -31,7 +31,7 @@ const MPExpensesPage = () => {
   return (
     <section>
       <div>
-        <div className="">
+        <div>
           <MPCardIDPage
             key={singleMPData?.value.id}
             mpInfo={singleMPData?.value}
