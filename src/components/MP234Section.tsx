@@ -15,17 +15,17 @@ const MP234Section = ({ interestInfo }: any) => {
 
   return (
     <div>
-      <h4 className="font-bold text-xl text-center py-3">
+      <h4 className="font-bold text-3xl text-center py-3 mx-auto">
         {interestInfo.name}
       </h4>
-      <div>
+      <div className="py-3 mx-auto">
         {interestInfo.interests.map((secondJob: any) => {
           valueAggregator(secondJob, valuesArray);
           return <MP234Analysis id={secondJob.id} secondJob={secondJob} />;
         })}
       </div>
-      <div className="text-center text-xl font-bold py-3 mx-auto">
-        Total Value: £{values}
+      <div className="text-center text-2xl py-3 mx-auto bg-secondary">
+        <span className="font-bold">Total Value:</span> £{values}
       </div>
     </div>
   );

@@ -15,11 +15,13 @@ const MP234Analysis = ({ secondJob }: any) => {
   valueAggregator(secondJob, valuesArray);
 
   return (
-    <div className="py-2 mx-7 items-center text-center">
-      <div className="py-2 mx-auto">
+    <div className="py-2 mx-auto text-center text-xl text-balance">
+      <div className="py-2 px-4 mx-auto">
         {" "}
-        <h3>{secondJob.interest}</h3>
-        <p className="font-semibold">Value: £{values}</p>
+        <h3 className="py-2 px-2">{secondJob.interest}</h3>
+        <p className="py-2 mx-auto">
+          <span className="font-semibold">Value:</span> £{values}
+        </p>
       </div>
     </div>
   );
