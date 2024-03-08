@@ -28,8 +28,6 @@ const MPExpensesPage = () => {
       });
   }, []);
 
-  //might need to make two calls to the api here, one for member info too
-
   return (
     <section>
       <div>
