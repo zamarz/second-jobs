@@ -31,10 +31,10 @@ const MPEmploymentEarnings = ({ earningsInfo }: any) => {
           hoursAggregator(secondJob, hoursArray);
           return (
             <div>
-              <h3 className="font-semibold mx-auto py-3 text-center text-xl text-balance underline">
+              <h3 className="font-semibold mx-auto py-3 text-center text-xl text-balance underline bg-tertiary-light">
                 {secondJob.interest}
               </h3>
-
+              <br></br>
               {secondJob.childInterests.length > 0 ? (
                 secondJob.childInterests.map((childInterest: any) => {
                   earningsAggregator(childInterest, earningsArray);
@@ -52,9 +52,13 @@ const MPEmploymentEarnings = ({ earningsInfo }: any) => {
             </div>
           );
         })}
-        <div className="text-xl py-5">
-          <div>Total Earnings: £{earnings}</div>
-          <div>Total Hours: {hours}</div>
+        <div className="text-3xl py-5 text-center bg-secondary">
+          <div className="py-2 mx-auto">
+            <span className="font-bold">Total Earnings:</span> £{earnings}
+          </div>
+          <div className="py-2 mx-auto">
+            <span className="font-bold">Total Hours:</span> {hours}
+          </div>
         </div>
       </div>
     </div>
