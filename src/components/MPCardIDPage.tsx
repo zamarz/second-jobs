@@ -1,12 +1,12 @@
+import Loading from "@/app/loading";
 import Image from "next/image";
 import Link from "next/link";
 
-const MPCardIDPage = ({ mpInfo }: any) => {
+const MPCardIDPage = ({ mpInfo }: any | undefined) => {
+  console.log(mpInfo);
   if (mpInfo === undefined) {
-    return <div>Loading...</div>;
+    return <Loading />;
   }
-
-  //need to make this into loading spinner
 
   return (
     <div className="py-8 mx-auto text-center">
