@@ -36,5 +36,13 @@ export const getMPExpenses = (mp_id) => {
       return err.data;
     });
 };
-
-// /4639/RegisteredInterests
+export const getMPSearch = (mp_name) => {
+  return parliamentSite
+    .get(`/Search?Name=${mp_name}&skip=0&take=0`)
+    .then(({ data }) => {
+      return data;
+    })
+    .catch(({ err }) => {
+      return err.data;
+    });
+};
