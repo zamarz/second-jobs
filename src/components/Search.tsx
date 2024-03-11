@@ -20,7 +20,6 @@ const Search = () => {
     }
   }, [searchTerm]);
 
-  console.log(searchAPIData);
   return (
     <section>
       <div>
