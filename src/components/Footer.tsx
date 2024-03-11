@@ -9,10 +9,14 @@ const Footer = () => {
             MP Second Jobs
           </Link>
           <div className="space-y-2">
-            <h4 className="font-semibold mb-4">About</h4>
+            <h4 className="font-semibold mb-4">
+              <Link href="/about">About</Link>
+            </h4>
           </div>
           <div className="space-y-2">
-            <h4 className="font-semibold mb-4">MP List</h4>
+            <h4 className="font-semibold mb-4">
+              <Link href="mps">MP List</Link>
+            </h4>
           </div>
         </div>
         <div className="mt-8 text-center text-sm">
