@@ -1,12 +1,26 @@
 "use client";
 
+import { getMPSearch } from "@/app/utils/api";
+import { error } from "console";
 import { ChangeEvent, useEffect, useState } from "react";
 
 const Search = () => {
   const [searchTerm, setSearchTerm] = useState("");
+  const [searchAPIData, setSearchAPIData] = useState({});
 
-  useEffect(() => {}, [searchTerm]);
+  useEffect(() => {
+    if (searchTerm !== "") {
+      getMPSearch(searchTerm)
+        .then((data: any) => {
+          setSearchAPIData(data);
+        })
+        .catch((err: string) => {
+          console.log(err);
+        });
+    }
+  }, [searchTerm]);
 
+  console.log(searchAPIData);
   return (
     <section>
       <div>
