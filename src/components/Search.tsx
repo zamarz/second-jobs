@@ -24,10 +24,10 @@ const Search = () => {
   return (
     <section>
       <div>
-        <label className="mx-3 text-2xl">Search for an MP: </label>
+        <label className="mx-3 text-2xl px-3">Search for an MP: </label>
         <input
-          className="outline"
-          placeholder="Search for an MP here..."
+          className="outline px-4 py-2"
+          placeholder="Enter an MP's name here..."
           id="userSearch"
           onChange={(event) => setSearchTerm(event.target.value)}
         ></input>

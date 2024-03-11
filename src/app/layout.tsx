@@ -8,7 +8,7 @@ import ThemeProvider from "@/components/ThemeProvider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Mps Second Jobs",
+  title: "MP Second Jobs",
   description: "Track the extra money MPs are making",
 };
 
