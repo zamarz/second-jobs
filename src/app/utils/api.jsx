@@ -38,7 +38,7 @@ export const getMPExpenses = (mp_id) => {
 };
 export const getMPSearch = (mp_name) => {
   return parliamentSite
-    .get(`/Search?Name=${mp_name}&skip=0&take=0`)
+    .get(`/Search?Name=${mp_name}&skip=0&take=0&IsCurrentMember=true&House=1`)
     .then(({ data }) => {
       return data;
     })

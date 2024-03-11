@@ -3,6 +3,7 @@
 import { getMPSearch } from "@/app/utils/api";
 import { error } from "console";
 import { ChangeEvent, useEffect, useState } from "react";
+import MPCard from "./MPCard";
 
 const Search = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -34,6 +35,15 @@ const Search = () => {
         <button className="mx-6 button" type="submit">
           Search
         </button>
+      </div>
+      <div hidden={false}>
+        {Object.keys(searchAPIData).length > 0 ? (
+          searchAPIData.items.map((mp: any) => {
+            return <MPCard key={mp.value.id} mpInfo={mp.value} />;
+          })
+        ) : (
+          <></>
+        )}
       </div>
     </section>
   );
