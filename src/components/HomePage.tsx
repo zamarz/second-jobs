@@ -1,12 +1,21 @@
 import Link from "next/link";
 import Search from "./Search";
+import Image from "next/image";
 
 const HomePage = () => {
   return (
     <section className="min-h-screen px-10 py-10 mx-auto container">
       <div className="flex flex-col text-center justify-center items-center py-10">
-        {" "}
-        <h2 className="text-3xl py-5">What second jobs does my MP have?</h2>
+        <Image
+          src={"/assets/parliament.jpg"}
+          alt="An image of Parliament"
+          width={400}
+          height={400}
+          className="py-5"
+        />{" "}
+        <h2 className="text-3xl py-5 font-semibold">
+          What second jobs does my MP have?
+        </h2>
         <h4 className="text-2xl">
           Find out what second jobs and additonal sources of income your MP has.
         </h4>
