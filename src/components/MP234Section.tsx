@@ -18,7 +18,7 @@ const MP234Section = ({ interestInfo }: any) => {
       <h4 className="font-bold text-3xl text-center py-3 mx-auto">
         {interestInfo.name}
       </h4>
-      <div className="py-3 mx-auto">
+      <div className="py-3 mx-auto grid grid-cols-1 lg:grid-cols-3 px-4 gap-4">
         {interestInfo.interests.map((secondJob: any) => {
           valueAggregator(secondJob, valuesArray);
           return <MP234Analysis id={secondJob.id} secondJob={secondJob} />;
