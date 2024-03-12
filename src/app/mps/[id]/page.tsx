@@ -11,6 +11,13 @@ const MPExpensesPage = () => {
   const [singleMPData, setsingleMPData] = useState<Array<any> | null>(null);
   const [MPInterestData, setMPInterestData] = useState(null);
 
+  const [totalEarnings, setTotalEarnings] = useState(0);
+
+  const updateTotalEarnings = (value: number) => {
+    // setTotalEarnings((prevTotal) => prevTotal + value);
+    console.log(value);
+  };
+
   useEffect(() => {
     getMPById(params.id)
       .then((data: any) => {
@@ -39,11 +46,21 @@ const MPExpensesPage = () => {
         </div>
         <div className="flex flex-col items-center text-center">
           {MPInterestData?.value.map((interest: string) => {
-            return <h2>{interest.name}</h2>;
+            return (
+              <div>
+                <h2>{interest.name}</h2>
+              </div>
+            );
           })}
         </div>
         <div>
-          <MPInterestCard mpInterestInfo={MPInterestData} />
+          <h2>Approximate total earnings: £{totalEarnings}</h2>
+        </div>
+        <div>
+          <MPInterestCard
+            mpInterestInfo={MPInterestData}
+            updateTotalEarnings={updateTotalEarnings}
+          />
         </div>
       </div>
     </section>

@@ -1,6 +1,6 @@
 import MPInterestAnalysis from "./MPInterestAnalysis";
 
-const MPInterestCard = ({ mpInterestInfo }: any) => {
+const MPInterestCard = ({ mpInterestInfo, updateTotalEarnings }: any) => {
   if (mpInterestInfo === undefined || mpInterestInfo === null) {
     return <div>Loading...</div>;
   }
@@ -21,7 +21,11 @@ const MPInterestCard = ({ mpInterestInfo }: any) => {
       <div>
         {mpInterestInfo.value.map((interest: any) => {
           return (
-            <MPInterestAnalysis key={interest.id} interestInfo={interest} />
+            <MPInterestAnalysis
+              key={interest.id}
+              interestInfo={interest}
+              updateTotalEarnings={updateTotalEarnings}
+            />
           );
         })}
       </div>

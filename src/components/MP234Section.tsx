@@ -4,13 +4,14 @@ import { useEffect, useState } from "react";
 import MP234Analysis from "./MP234Analysis";
 import { valueAggregator, valueSum } from "@/app/utils/functions";
 
-const MP234Section = ({ interestInfo }: any) => {
+const MP234Section = ({ interestInfo, updateTotalEarnings }: any) => {
   const [values, setValues] = useState(0);
 
   let valuesArray: any = ["0"];
 
   useEffect(() => {
     valueSum(valuesArray, setValues);
+    // updateTotalEarnings();
   }, [valuesArray]);
 
   return (

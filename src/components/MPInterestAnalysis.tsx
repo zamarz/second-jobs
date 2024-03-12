@@ -3,17 +3,23 @@ import MP234Section from "./MP234Section";
 import MPChildInterestAnalysis from "./MPChildInterestAnalysis";
 import MPEmploymentEarnings from "./MPEmploymentEarnings";
 
-const MPInterestAnalysis = ({ interestInfo }: any) => {
+const MPInterestAnalysis = ({ interestInfo, updateTotalEarnings }: any) => {
   return (
     <div>
       {interestInfo.name === "1. Employment and earnings" ? (
-        <MPEmploymentEarnings earningsInfo={interestInfo} />
+        <MPEmploymentEarnings
+          earningsInfo={interestInfo}
+          updateTotalEarnings={updateTotalEarnings}
+        />
       ) : interestInfo.name ===
           "2. (b) Any other support not included in Category 2(a)" ||
         interestInfo.name ===
           "3. Gifts, benefits and hospitality from UK sources" ||
         interestInfo.name === "4. Visits outside the UK" ? (
-        <MP234Section interestInfo={interestInfo} />
+        <MP234Section
+          interestInfo={interestInfo}
+          updateTotalEarnings={updateTotalEarnings}
+        />
       ) : (
         <div className="mx-auto">
           <h4 className="font-bold text-3xl text-center py-3 mx-auto">

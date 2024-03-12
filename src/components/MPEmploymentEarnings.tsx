@@ -8,7 +8,7 @@ import {
   sumHours,
 } from "@/app/utils/functions";
 
-const MPEmploymentEarnings = ({ earningsInfo }: any) => {
+const MPEmploymentEarnings = ({ earningsInfo, updateTotalEarnings }: any) => {
   const [earnings, setEarnings] = useState(0);
   const [hours, setHours] = useState(0);
 
@@ -18,6 +18,7 @@ const MPEmploymentEarnings = ({ earningsInfo }: any) => {
   useEffect(() => {
     sumEarnings(earningsArray, setEarnings);
     sumHours(hoursArray, setHours);
+    updateTotalEarnings(earnings);
   }, [earningsArray, hoursArray]);
 
   return (
