@@ -15,15 +15,15 @@ const MPInterestAnalysis = ({ interestInfo }: any) => {
         interestInfo.name === "4. Visits outside the UK" ? (
         <MP234Section interestInfo={interestInfo} />
       ) : (
-        <div className="mx-auto w-1/2">
+        <div className="mx-auto">
           <h4 className="font-bold text-3xl text-center py-3 mx-auto">
             {interestInfo.name}
           </h4>
-          <div className="py-3 mx-auto">
+          <div className="py-5 mx-auto my-2 grid grid-cols-1 md:grid-cols-2 gap-4 px-4 ">
             {interestInfo.interests.map((secondJob: any) => {
               return (
-                <div className="text-center py-3 mx-auto">
-                  <h3 className=" mx-auto py-3 text-center text-xl text-balance">
+                <div className="text-center py-3 mx-auto outline px-4 w-full">
+                  <h3 className=" mx-auto py-3  text-xl text-balance">
                     {secondJob.interest}
                   </h3>
 
