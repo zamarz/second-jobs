@@ -35,20 +35,22 @@ const MPEmploymentEarnings = ({ earningsInfo }: any) => {
                 {secondJob.interest}
               </h3>
               <br></br>
-              {secondJob.childInterests.length > 0 ? (
-                secondJob.childInterests.map((childInterest: any) => {
-                  earningsAggregator(childInterest, earningsArray);
-                  hoursAggregator(childInterest, hoursArray);
-                  return (
-                    <MPChildInterestAnalysis
-                      key={childInterest.id}
-                      childInterestInfo={childInterest}
-                    />
-                  );
-                })
-              ) : (
-                <></>
-              )}
+              <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 py-6 mx-auto px-5">
+                {secondJob.childInterests.length > 0 ? (
+                  secondJob.childInterests.map((childInterest: any) => {
+                    earningsAggregator(childInterest, earningsArray);
+                    hoursAggregator(childInterest, hoursArray);
+                    return (
+                      <MPChildInterestAnalysis
+                        key={childInterest.id}
+                        childInterestInfo={childInterest}
+                      />
+                    );
+                  })
+                ) : (
+                  <></>
+                )}
+              </div>
             </div>
           );
         })}
