@@ -36,7 +36,11 @@ const MPExpensesPage = () => {
             key={singleMPData?.value.id}
             mpInfo={singleMPData?.value}
           />
-          ;
+        </div>
+        <div className="flex flex-col items-center text-center">
+          {MPInterestData?.value.map((interest: string) => {
+            return <h2>{interest.name}</h2>;
+          })}
         </div>
         <div>
           <MPInterestCard mpInterestInfo={MPInterestData} />

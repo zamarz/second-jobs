@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 
 const MPCardIDPage = ({ mpInfo }: any) => {
-  console.log(mpInfo);
   if (mpInfo === undefined) {
     return <Loading />;
   }
