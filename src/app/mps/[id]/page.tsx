@@ -43,17 +43,11 @@ const MPExpensesPage = () => {
             mpInfo={singleMPData?.value}
           />
         </div>
-        <div className="flex flex-col items-center text-center">
-          {MPInterestData?.value.map((interest: string) => {
-            return (
-              <div>
-                <h2>{interest.name}</h2>
-              </div>
-            );
-          })}
-        </div>
-        <div>
-          <h2>Approximate total earnings: £{totalEarnings}</h2>
+        <div className="flex flex-col items-center pb-7 mx-auto mb-4">
+          <h2 className="text-3xl">
+            Approximate total:{" "}
+            <span className="font-bold">£{totalEarnings}</span>
+          </h2>
         </div>
         <div>
           <MPInterestCard

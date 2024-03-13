@@ -19,9 +19,13 @@ const MPCardIDPage = ({ mpInfo }: any) => {
           />
         </div>
         <h3 className="text-2xl font-bold py-2">{mpInfo.nameDisplayAs}</h3>
-        <p className="py-2 text-xl">Party: {mpInfo.latestParty.name}</p>
         <p className="py-2 text-xl">
-          Constituency: {mpInfo.latestHouseMembership.membershipFrom}
+          <span className="font-semibold">Party:</span>{" "}
+          {mpInfo.latestParty.name}
+        </p>
+        <p className="py-2 text-xl">
+          <span className="font-semibold">Constituency:</span>{" "}
+          {mpInfo.latestHouseMembership.membershipFrom}
         </p>
         <button className="button">
           <Link
