@@ -8,7 +8,7 @@ const MPCardIDPage = ({ mpInfo }: any) => {
   }
 
   return (
-    <div className="py-8 mx-auto text-center">
+    <div className="pb-2 pt-5 mx-auto text-center">
       <div className="py-5 mx-auto">
         <div className="flex justify-center">
           <Image
