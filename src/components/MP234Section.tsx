@@ -14,6 +14,10 @@ const MP234Section = ({ interestInfo, updateTotalEarnings }: any) => {
     // updateTotalEarnings();
   }, [valuesArray]);
 
+  useEffect(() => {
+    updateTotalEarnings(values);
+  }, [values]);
+
   return (
     <div className="py-3">
       <h4 className="font-bold text-3xl text-center py-3 mx-auto">

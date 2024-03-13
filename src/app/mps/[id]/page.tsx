@@ -14,8 +14,7 @@ const MPExpensesPage = () => {
   const [totalEarnings, setTotalEarnings] = useState(0);
 
   const updateTotalEarnings = (value: number) => {
-    // setTotalEarnings((prevTotal) => prevTotal + value);
-    console.log(value);
+    setTotalEarnings((prevTotal) => prevTotal + value);
   };
 
   useEffect(() => {
