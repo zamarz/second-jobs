@@ -15,7 +15,9 @@ const MPInterestAnalysis = ({ interestInfo, updateTotalEarnings }: any) => {
           "2. (b) Any other support not included in Category 2(a)" ||
         interestInfo.name ===
           "3. Gifts, benefits and hospitality from UK sources" ||
-        interestInfo.name === "4. Visits outside the UK" ? (
+        interestInfo.name === "4. Visits outside the UK" ||
+        interestInfo.name ===
+          "2. (a) Support linked to an MP but received by a local party organisation or indirectly via a central party organisation" ? (
         <MP234Section
           interestInfo={interestInfo}
           updateTotalEarnings={updateTotalEarnings}
