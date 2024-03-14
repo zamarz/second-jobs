@@ -5,3 +5,7 @@
 .button {
   @apply bg-tertiary-dark dark:bg-primary text-white px-4 py-2 mt-3 mb-3 rounded shadow dark:hover:bg-secondary hover:bg-blue-400 active:bg-blue-600 focus:outline-none;
 }
+
+.buttonAZ {
+  @apply bg-tertiary-dark dark:bg-primary text-white px-5 mx-auto py-2 my-3 rounded shadow dark:hover:bg-secondary hover:bg-blue-400 active:bg-blue-600 focus:outline-none;
+}

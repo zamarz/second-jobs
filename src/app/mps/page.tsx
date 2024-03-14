@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import { getMPBySurnameStart, getMPs } from "../utils/api";
+import { getMPBySurnameStart } from "../utils/api";
 import MPCard from "@/components/MPCard";
 import Loading from "../loading";
 
@@ -12,7 +12,7 @@ const Mps = () => {
 
   useEffect(() => {
     setLoading(true);
-    getMPs()
+    getMPBySurnameStart("A")
       .then((data: any) => {
         setMPData(data.items);
       })
@@ -40,21 +40,22 @@ const Mps = () => {
 
   return (
     <section className="min-h-screen px-10 py-10 mx-auto container">
-      <div className="flex flex-col text-center justify-center items-center py-10">
-        Find an MP by their last name (?) May need to use the search api to
-        define a MP. What you see below are examples
+      <div className="text-center justify-center items-center py-5 ">
+        <p className="text-2xl py-2 pb-3">View Members by surname</p>
+        <div className="flex flex-row gap-2 flex-wrap md:flex-nowrap">
+          {alphabet.map((letter: string) => (
+            <button
+              className="buttonAZ"
+              key={letter}
+              onClick={() => handleClick(letter)}
+            >
+              {letter}
+            </button>
+          ))}
+        </div>
       </div>
 
-      <div>
-        <p>See Members by surname</p>
-        {alphabet.map((letter: string) => (
-          <button key={letter} onClick={() => handleClick(letter)}>
-            {letter}
-          </button>
-        ))}
-      </div>
-
-      <div className="flex flex-wrap py-3">
+      <div className="flex flex-wrap py-3 justify-center">
         {mpData?.map((mp: any) => {
           return <MPCard key={mp.value.id} mpInfo={mp.value} />;
         })}
