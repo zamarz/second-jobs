@@ -26,8 +26,6 @@ const Mps = () => {
     return <Loading />;
   }
 
-  console.log(mpData, "mpdata");
-
   const handleClick = (letter: string) => {
     setLoading(true);
     getMPBySurnameStart(letter)
