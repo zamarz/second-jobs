@@ -1,12 +1,14 @@
 "use client";
 import { useEffect, useState } from "react";
-import { getMPs } from "../utils/api";
+import { getMPBySurnameStart, getMPs } from "../utils/api";
 import MPCard from "@/components/MPCard";
 import Loading from "../loading";
 
 const Mps = () => {
   const [mpData, setMPData] = useState<Array<any> | null>(null);
   const [loading, setLoading] = useState(false);
+
+  const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 
   useEffect(() => {
     setLoading(true);
@@ -24,6 +26,18 @@ const Mps = () => {
     return <Loading />;
   }
 
+  const handleClick = (letter: string) => {
+    setLoading(true);
+    getMPBySurnameStart(letter)
+      .then((data: any) => {
+        setMPData(data.items);
+      })
+      .catch((err: any) => {
+        console.log(err);
+      });
+    setLoading(false);
+  };
+
   return (
     <section className="min-h-screen px-10 py-10 mx-auto container">
       <div className="flex flex-col text-center justify-center items-center py-10">
@@ -33,8 +47,11 @@ const Mps = () => {
 
       <div>
         <p>See Members by surname</p>
-        <p>A</p>
-        <p>B</p>
+        {alphabet.map((letter: string) => (
+          <button key={letter} onClick={() => handleClick(letter)}>
+            {letter}
+          </button>
+        ))}
       </div>
 
       <div className="flex flex-wrap py-3">

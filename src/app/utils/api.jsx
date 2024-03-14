@@ -49,7 +49,9 @@ export const getMPSearch = (mp_name) => {
 
 export const getMPBySurnameStart = (letter) => {
   return parliamentSite
-    .get(`/Search?NameStartsWith=${letter}&skip=0&take=20`)
+    .get(
+      `/Search?NameStartsWith=${letter}&skip=0&take=20&IsCurrentMember=true&House=1`
+    )
     .then(({ data }) => {
       return data;
     })
