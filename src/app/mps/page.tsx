@@ -5,7 +5,7 @@ import MPCard from "@/components/MPCard";
 import Loading from "../loading";
 
 const Mps = () => {
-  const [mpData, setMPData] = useState<Array<any> | null>(null);
+  const [mpData, setMPData] = useState<Array<any>>([]);
   const [loading, setLoading] = useState(false);
 
   const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
@@ -25,6 +25,8 @@ const Mps = () => {
   if (loading) {
     return <Loading />;
   }
+
+  console.log(mpData, "mpdata");
 
   const handleClick = (letter: string) => {
     setLoading(true);
@@ -56,9 +58,18 @@ const Mps = () => {
       </div>
 
       <div className="flex flex-wrap py-3 justify-center">
-        {mpData?.map((mp: any) => {
-          return <MPCard key={mp.value.id} mpInfo={mp.value} />;
-        })}
+        {mpData.length > 0 ? (
+          mpData?.map((mp: any) => {
+            return <MPCard key={mp.value.id} mpInfo={mp.value} />;
+          })
+        ) : (
+          <div className="py-5 mx-auto">
+            <h3 className="text-center py-4 text-2xl">
+              It looks like there aren't any MP's that have a surname beginning
+              with that letter.
+            </h3>
+          </div>
+        )}
       </div>
     </section>
   );
