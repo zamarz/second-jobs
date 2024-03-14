@@ -31,6 +31,12 @@ const Mps = () => {
         define a MP. What you see below are examples
       </div>
 
+      <div>
+        <p>See Members by surname</p>
+        <p>A</p>
+        <p>B</p>
+      </div>
+
       <div className="flex flex-wrap py-3">
         {mpData?.map((mp: any) => {
           return <MPCard key={mp.value.id} mpInfo={mp.value} />;
