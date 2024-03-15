@@ -59,12 +59,12 @@ const MPEmploymentEarnings = ({ earningsInfo, updateTotalEarnings }: any) => {
             </div>
           );
         })}
-        <div className="text-3xl py-5 text-center bg-tertiary-dark outline mx-auto w-1/2 rounded ">
+        <div className="text-3xl py-5 text-center border-tertiary-dark border-4 mx-auto w-1/2 rounded border-solid hover:border-double shadow-2xl">
           <div className="py-2 mx-auto">
-            <span className="font-bold">Total Earnings:</span> £{earnings}
+            <span className="font-semibold">Total Earnings:</span> £{earnings}
           </div>
           <div className="py-2 mx-auto">
-            <span className="font-bold">Total Hours:</span> {hours}
+            <span className="font-semibold">Total Hours:</span> {hours}
           </div>
         </div>
       </div>
