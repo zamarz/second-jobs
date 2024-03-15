@@ -9,8 +9,8 @@ const HomePage = () => {
         <Image
           src={"/assets/parliament.jpg"}
           alt="An image of Parliament"
-          width={400}
-          height={400}
+          width={500}
+          height={500}
           className="py-5"
         />{" "}
         <h2 className="text-3xl py-5 font-semibold">
