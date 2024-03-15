@@ -34,7 +34,15 @@ const Contact = () => {
           >
             here
           </Link>{" "}
-          or buy me a coffee here.
+          or{" "}
+          <Link
+            className="underline hover:bg-tertiary-light"
+            href="https://www.paypal.com/donate/?hosted_button_id=QHRKJF2CZMG54"
+            target="_blank"
+          >
+            buy me a coffee
+          </Link>
+          .
         </p>
       </div>
     </section>
