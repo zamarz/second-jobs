@@ -17,22 +17,28 @@ const MPExpensesPage = () => {
     setTotalEarnings((prevTotal) => prevTotal + value);
   };
 
+  const [error, setError] = useState(false);
+
   useEffect(() => {
     getMPById(params.id)
       .then((data: any) => {
         setsingleMPData(data);
       })
       .catch((err: any) => {
-        console.log(err);
+        setError(true);
       });
     getMPExpenses(params.id)
       .then((data: any) => {
         setMPInterestData(data);
       })
       .catch((err: any) => {
-        console.log(err);
+        console.log(err, "err2");
       });
   }, []);
+
+  if (error) {
+    return <div>It looks like this couldn't be loaded.</div>;
+  }
 
   return (
     <section>
