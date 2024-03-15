@@ -15,7 +15,12 @@ const Footer = () => {
           </div>
           <div className="space-y-2">
             <h4 className="font-semibold mb-4">
-              <Link href="mps">MP List</Link>
+              <Link href="/mps">MP List</Link>
+            </h4>
+          </div>
+          <div className="space-y-2">
+            <h4 className="font-semibold mb-4">
+              <Link href="/contact">Contact Me</Link>
             </h4>
           </div>
         </div>
