@@ -1,10 +1,18 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const About = () => {
   return (
-    <section className="min-h-screen flex justify-center items-center ">
-      <div className="text-center w-2/3 text-balance">
-        <h3 className="text-3xl py-3 mx-auto">About</h3>
+    <section className="min-h-screen mx-auto container px-10 py-10">
+      <div className="text-center text-pretty flex flex-col justify-center items-center ">
+        <Image
+          src={"/assets/parliament_2.jpg"}
+          alt="An image of Parliament in the evening"
+          width={500}
+          height={500}
+          className="py-5"
+        />
+        <h3 className="text-3xl md:text-4xl py-3 mx-auto">About</h3>
         <p className="text-xl py-4">
           This is a project which aims to make the data around how much MPs are
           making from additional income more accessible. Most of the data in the
@@ -30,11 +38,11 @@ const About = () => {
           for property they own as we don't know how much it is worth.
         </p>
         <p className="text-xl py-4">
-          I have added 'Totals' to each of the first five sections. This works
-          out how much money an MP is making. Despite this, not all money will
-          be declared in these 'Total' areas. Always make sure to double check
-          the amounts in the descriptions of each interest to ensure that these
-          values haven't been missed.
+          I have added 'Totals' to each of the first five or so registered
+          interest sections. This works out how much money an MP is making.
+          Despite this, not all money will be declared in these 'Total' areas.
+          Always make sure to double check the amounts in the descriptions of
+          each interest to ensure that these values haven't been missed.
         </p>
       </div>
     </section>
