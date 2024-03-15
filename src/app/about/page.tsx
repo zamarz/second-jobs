@@ -24,10 +24,16 @@ const About = () => {
           interests, which leads to a lot of variation.
         </p>
         <p className="text-xl py-4">
-          I have added 'Totals' to each section, for the hours each MP works and
-          how much money they make. Despite this, not all hours and money will
-          be declared in these areas. Always make sure to double check the
-          amounts in the descriptions of each interest to ensure that these
+          Additionally, if they earn rent from property they own, it appears
+          they don't have to declare how much they are earning from it. They
+          only have to declare that they are earning the money. The same applies
+          for property they own as we don't know how much it is worth.
+        </p>
+        <p className="text-xl py-4">
+          I have added 'Totals' to each of the first five sections. This works
+          out how much money an MP is making. Despite this, not all money will
+          be declared in these 'Total' areas. Always make sure to double check
+          the amounts in the descriptions of each interest to ensure that these
           values haven't been missed.
         </p>
       </div>
