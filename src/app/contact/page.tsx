@@ -1,12 +1,20 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const Contact = () => {
   return (
-    <section className="min-h-screen flex justify-center items-center ">
-      <div className="text-center w-2/3 text-balance">
-        <h3 className="text-3xl py-3 mx-auto">Contact Me</h3>
+    <section className="min-h-screen mx-auto container px-10 py-10">
+      <div className="text-center text-balance flex flex-col justify-center items-center">
+        <Image
+          src={"/assets/uk_telephone_contact.jpg"}
+          alt="An image of two red telephone boxes with the London Eye behind them"
+          width={500}
+          height={500}
+          className="py-5"
+        />
+        <h3 className="text-3xl md:text-4xl py-3 mx-auto">Contact Me</h3>
         <p className="text-xl py-4">
-          Spot a bug? Got a recommendation to make? Or just want to say hi? Feel
+          Spot a bug, got a recommendation to make, or just want to say hi? Feel
           free to send me an{" "}
           <Link
             className="underline hover:bg-tertiary-light"
