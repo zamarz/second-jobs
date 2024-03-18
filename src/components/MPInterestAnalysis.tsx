@@ -30,7 +30,7 @@ const MPInterestAnalysis = ({ interestInfo, updateTotalEarnings }: any) => {
           <div className="py-5 mx-auto my-2 grid grid-cols-1 md:grid-cols-2 gap-4 px-4 ">
             {interestInfo.interests.map((secondJob: any) => {
               return (
-                <div className="text-center py-3 mx-auto outline px-4 w-full">
+                <div className="text-center py-3 mx-auto px-4 w-full border-2 rounded border-secondary bg-tertiary-light/40">
                   <h3 className=" mx-auto py-3  text-xl text-balance">
                     {secondJob.interest}
                   </h3>
