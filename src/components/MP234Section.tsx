@@ -29,7 +29,7 @@ const MP234Section = ({ interestInfo, updateTotalEarnings }: any) => {
           return <MP234Analysis id={secondJob.id} secondJob={secondJob} />;
         })}
       </div>
-      <div className="text-center text-2xl py-3 mx-auto bg-tertiary-dark w-1/3 outline">
+      <div className="text-center text-2xl py-3 mx-auto w-1/2 rounded border-4 border-primary bg-tertiary-alt border-solid hover:border-double shadow-xl">
         <span className="font-bold">Total Value:</span> £{values}
       </div>
     </div>
