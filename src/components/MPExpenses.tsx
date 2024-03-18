@@ -6,7 +6,6 @@ const MPInterestCard = ({ mpInterestInfo, updateTotalEarnings }: any) => {
     return <Loading />;
   }
 
-  //make into spinner
   if (mpInterestInfo.value.length === 0) {
     return (
       <div className="py-5 mx-auto">
