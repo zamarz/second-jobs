@@ -23,13 +23,13 @@ const MPChildInterestAnalysis = ({ childInterestInfo }: any) => {
   earningsAggregator(childInterestInfo, childInterestEarningsArray);
   hoursAggregator(childInterestInfo, childInterestHoursArray);
   return (
-    <div className="mx-auto w-full md:w-2/3 outline py-2 ">
+    <div className="mx-auto w-full outline py-2 rounded bg-tertiary-light/40">
       <div className="py-2 mx-auto text-center text-xl text-balance">
         <div className="py-2 mx-auto">{childInterestInfo.interest}</div>
-        <div className="py-2 mx-auto">
-          <span className="font-bold">Earnings:</span> £{childInterestEarnings}
+        <div className="py-1 mx-auto text-2xl ">
+          <span className="font-bold">Value:</span> £{childInterestEarnings}
         </div>
-        <div className="py-2 mx-auto">
+        <div className="py-1 mx-auto text-2xl ">
           <span className="font-bold">Hours:</span> {childInterestHours}
         </div>
       </div>

@@ -15,6 +15,7 @@ const config: Config = {
         tertiary: {
           dark: "#bc4749",
           light: "#f2e8cf",
+          alt: "#FFE6A7",
         },
       },
     },
