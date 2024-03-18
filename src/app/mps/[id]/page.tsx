@@ -37,9 +37,10 @@ const MPExpensesPage = () => {
       });
   }, []);
 
-  if (error) {
-    return <Error />;
-  }
+  // if (error) {
+  //   console.log(error);
+  //   // return <Error />;
+  // }
 
   return (
     <section>
