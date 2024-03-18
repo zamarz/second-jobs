@@ -1,8 +1,9 @@
+import Loading from "@/app/loading";
 import MPInterestAnalysis from "./MPInterestAnalysis";
 
 const MPInterestCard = ({ mpInterestInfo, updateTotalEarnings }: any) => {
   if (mpInterestInfo === undefined || mpInterestInfo === null) {
-    return <div>Loading...</div>;
+    return <Loading />;
   }
 
   //make into spinner

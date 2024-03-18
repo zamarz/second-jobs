@@ -1,5 +1,6 @@
 "use client";
 
+import Error from "@/app/error";
 import { getMPExpenses, getMPById } from "@/app/utils/api";
 import MPCardIDPage from "@/components/MPCardIDPage";
 import MPInterestCard from "@/components/MPExpenses";
@@ -37,7 +38,7 @@ const MPExpensesPage = () => {
   }, []);
 
   if (error) {
-    return <div>It looks like this couldn't be loaded.</div>;
+    return <Error />;
   }
 
   return (

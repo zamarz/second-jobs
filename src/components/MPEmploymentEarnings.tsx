@@ -18,7 +18,6 @@ const MPEmploymentEarnings = ({ earningsInfo, updateTotalEarnings }: any) => {
   useEffect(() => {
     sumEarnings(earningsArray, setEarnings);
     sumHours(hoursArray, setHours);
-    // updateTotalEarnings(earnings);
   }, [earningsArray, hoursArray]);
 
   useEffect(() => {
