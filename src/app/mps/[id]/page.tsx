@@ -1,38 +1,43 @@
 "use client";
 
-import Error from "@/app/error";
+import { MPData, MPExpensesData } from "@/app/types/types";
 import { getMPExpenses, getMPById } from "@/app/utils/api";
 import MPCardIDPage from "@/components/MPCardIDPage";
 import MPInterestCard from "@/components/MPExpenses";
+import Error from "next/error";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const MPExpensesPage = () => {
   const params = useParams<{ id: string }>();
-  const [singleMPData, setsingleMPData] = useState<Array<any> | null>(null);
-  const [MPInterestData, setMPInterestData] = useState(null);
+  const [singleMPData, setsingleMPData] = useState<MPData | null>(null);
+  // const [singleMPData, setsingleMPData] = useState<Array<any> | null>(null);
 
-  const [totalEarnings, setTotalEarnings] = useState(0);
+  const [MPInterestData, setMPInterestData] = useState<MPExpensesData | null>(
+    null
+  );
+
+  const [totalEarnings, setTotalEarnings] = useState<number>(0);
 
   const updateTotalEarnings = (value: number) => {
     setTotalEarnings((prevTotal) => prevTotal + value);
   };
 
-  const [error, setError] = useState(false);
+  const [error, setError] = useState<boolean>(false);
 
   useEffect(() => {
     getMPById(params.id)
-      .then((data: any) => {
+      .then((data: MPData) => {
         setsingleMPData(data);
       })
-      .catch((err: any) => {
+      .catch((err: Error) => {
         setError(true);
       });
     getMPExpenses(params.id)
-      .then((data: any) => {
+      .then((data: MPExpensesData) => {
         setMPInterestData(data);
       })
-      .catch((err: any) => {
+      .catch((err: Error) => {
         console.log(err, "err2");
       });
   }, []);

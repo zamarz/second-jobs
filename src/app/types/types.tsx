@@ -28,3 +28,15 @@ export type MPData = {
   value: Value;
   links: Array<Links>;
 };
+
+export type MPExpensesData = {
+  link: Array<Links>;
+  value: Array<ValueExpense>;
+};
+
+export type ValueExpense = {
+  id: number;
+  interests: Array<any>;
+  name: string;
+  sortOrder: number;
+};
