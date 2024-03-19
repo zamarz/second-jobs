@@ -37,7 +37,7 @@ const MPExpensesPage = () => {
       .then((data: MPExpensesData) => {
         setMPInterestData(data);
       })
-      .catch((err: Error) => {
+      .catch((err: Error | undefined) => {
         console.log(err, "err2");
       });
   }, []);

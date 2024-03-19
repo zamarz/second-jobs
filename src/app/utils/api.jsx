@@ -10,8 +10,8 @@ export const getMPs = () => {
     .then(({ data }) => {
       return data;
     })
-    .catch(({ err }) => {
-      return err.data;
+    .catch((err) => {
+      throw err;
     });
 };
 
@@ -21,8 +21,8 @@ export const getMPById = (mp_id) => {
     .then(({ data }) => {
       return data;
     })
-    .catch(({ err }) => {
-      return err.data;
+    .catch((err) => {
+      throw err;
     });
 };
 
@@ -32,8 +32,8 @@ export const getMPExpenses = (mp_id) => {
     .then(({ data }) => {
       return data;
     })
-    .catch(({ err }) => {
-      return err.data;
+    .catch((err) => {
+      throw err;
     });
 };
 export const getMPSearch = (mp_name) => {
@@ -42,8 +42,8 @@ export const getMPSearch = (mp_name) => {
     .then(({ data }) => {
       return data;
     })
-    .catch(({ err }) => {
-      return err.data;
+    .catch((err) => {
+      throw err;
     });
 };
 
@@ -55,8 +55,7 @@ export const getMPBySurnameStart = (letter) => {
     .then(({ data }) => {
       return data;
     })
-    .catch(({ err }) => {
-      console.log(err);
-      return err.data;
+    .catch((err) => {
+      throw err;
     });
 };
