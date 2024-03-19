@@ -56,6 +56,7 @@ export const getMPBySurnameStart = (letter) => {
       return data;
     })
     .catch(({ err }) => {
+      console.log(err);
       return err.data;
     });
 };

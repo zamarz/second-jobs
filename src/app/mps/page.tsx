@@ -3,20 +3,21 @@ import { useEffect, useState } from "react";
 import { getMPBySurnameStart } from "../utils/api";
 import MPCard from "@/components/MPCard";
 import Loading from "../loading";
+import { GetMPData, MPData } from "../types/types";
 
 const Mps = () => {
   const [mpData, setMPData] = useState<Array<any>>([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState<boolean>(false);
 
   const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 
   useEffect(() => {
     setLoading(true);
     getMPBySurnameStart("A")
-      .then((data: any) => {
+      .then((data: GetMPData) => {
         setMPData(data.items);
       })
-      .catch((err: any) => {
+      .catch((err: Error) => {
         console.log(err);
       });
     setLoading(false);
@@ -29,14 +30,16 @@ const Mps = () => {
   const handleClick = (letter: string) => {
     setLoading(true);
     getMPBySurnameStart(letter)
-      .then((data: any) => {
+      .then((data: GetMPData) => {
         setMPData(data.items);
       })
-      .catch((err: any) => {
+      .catch((err: Error) => {
         console.log(err);
       });
     setLoading(false);
   };
+
+  console.log(mpData);
 
   return (
     <section className="min-h-screen px-10 py-10 mx-auto container">
@@ -57,7 +60,7 @@ const Mps = () => {
 
       <div className="flex flex-wrap py-3 justify-center">
         {mpData.length > 0 ? (
-          mpData?.map((mp: any) => {
+          mpData?.map((mp: MPData) => {
             return <MPCard key={mp.value.id} mpInfo={mp.value} />;
           })
         ) : (

@@ -1,13 +1,14 @@
 "use client";
 
-import ThemeContext from "@/app/context/themeContext";
+import ThemeContext, { ThemeContextType } from "@/app/context/themeContext";
 import Link from "next/link";
 import { useContext } from "react";
 import { HiLightBulb } from "react-icons/hi";
 import { MdDarkMode } from "react-icons/md";
 
 const Header = () => {
-  const { darkTheme, setDarkTheme } = useContext(ThemeContext);
+  const { darkTheme, setDarkTheme }: ThemeContextType =
+    useContext(ThemeContext);
 
   return (
     <header className="bg-primary text-white py-8 px-6 text-xl flex flex-wrap md:flex-nowrap items-center justify-between">
