@@ -39,8 +39,6 @@ const Mps = () => {
     setLoading(false);
   };
 
-  console.log(mpData);
-
   return (
     <section className="min-h-screen px-10 py-10 mx-auto container">
       <div className="text-center justify-center items-center py-5 ">

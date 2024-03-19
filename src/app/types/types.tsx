@@ -18,10 +18,10 @@ export type Value = {
   latestHouseMembership: any;
   latestParty: any;
   nameAddressAs: string;
-  nameDisplayedAs: string;
+  nameDisplayAs: string;
   nameFullTitle: string;
   nameListAs: string;
-  thumbnailURL: string;
+  thumbnailUrl: string;
 };
 
 export type MPData = {
