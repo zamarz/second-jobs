@@ -1,8 +1,9 @@
 import Loading from "@/app/loading";
+import { Value } from "@/app/types/types";
 import Image from "next/image";
 import Link from "next/link";
 
-const MPCardIDPage = ({ mpInfo }: any) => {
+const MPCardIDPage = ({ mpInfo }: { mpInfo: Value | undefined }) => {
   if (mpInfo === undefined) {
     return <Loading />;
   }
