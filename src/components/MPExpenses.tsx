@@ -1,5 +1,6 @@
 import Loading from "@/app/loading";
 import MPInterestAnalysis from "./MPInterestAnalysis";
+import { ValueExpense } from "@/app/types/types";
 
 const MPInterestCard = ({ mpInterestInfo, updateTotalEarnings }: any) => {
   if (mpInterestInfo === undefined || mpInterestInfo === null) {
@@ -19,7 +20,7 @@ const MPInterestCard = ({ mpInterestInfo, updateTotalEarnings }: any) => {
   return (
     <section>
       <div>
-        {mpInterestInfo.value.map((interest: any) => {
+        {mpInterestInfo.value.map((interest: ValueExpense) => {
           return (
             <MPInterestAnalysis
               key={interest.id}
