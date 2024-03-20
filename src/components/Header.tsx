@@ -3,6 +3,7 @@
 import ThemeContext, { ThemeContextType } from "@/app/context/themeContext";
 import Link from "next/link";
 import { useContext } from "react";
+import { BsSuitcaseLg } from "react-icons/bs";
 import { HiLightBulb } from "react-icons/hi";
 import { MdDarkMode } from "react-icons/md";
 
@@ -12,10 +13,11 @@ const Header = () => {
 
   return (
     <header className="bg-primary text-white py-8 px-6 text-xl flex flex-wrap md:flex-nowrap items-center justify-between">
-      <div className="flex mx-9 my-4 items-center w-full md:w-1/3 md:items-center md:justify-center">
+      <div className="flex mx-9 my-4 items-center w-full md:w-1/3 md:items-center justify-center">
+        <BsSuitcaseLg />
         <Link
           href="/"
-          className="font-black text-tertiary-light ml-3 md:align-center"
+          className="font-black text-tertiary-light mx-4 md:align-center"
         >
           MP Second Jobs
         </Link>
