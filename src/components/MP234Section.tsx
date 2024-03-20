@@ -3,15 +3,20 @@
 import { useEffect, useState } from "react";
 import MP234Analysis from "./MP234Analysis";
 import { valueAggregator, valueSum } from "@/app/utils/functions";
+import { Interest, UpdateTotalEarnings, ValueExpense } from "@/app/types/types";
 
-const MP234Section = ({ interestInfo, updateTotalEarnings }: any) => {
-  const [values, setValues] = useState(0);
+type Props = {
+  interestInfo: ValueExpense;
+  updateTotalEarnings: UpdateTotalEarnings;
+};
 
-  let valuesArray: any = ["0"];
+const MP234Section = ({ interestInfo, updateTotalEarnings }: Props) => {
+  const [values, setValues] = useState<number>(0);
+
+  let valuesArray: Array<string> = ["0"];
 
   useEffect(() => {
     valueSum(valuesArray, setValues);
-    // updateTotalEarnings();
   }, [valuesArray]);
 
   useEffect(() => {
@@ -24,7 +29,7 @@ const MP234Section = ({ interestInfo, updateTotalEarnings }: any) => {
         {interestInfo.name}
       </h4>
       <div className="py-3 mx-auto grid grid-cols-1 lg:grid-cols-3 px-4 gap-4">
-        {interestInfo.interests.map((secondJob: any) => {
+        {interestInfo.interests.map((secondJob: Interest) => {
           valueAggregator(secondJob, valuesArray);
           return <MP234Analysis id={secondJob.id} secondJob={secondJob} />;
         })}

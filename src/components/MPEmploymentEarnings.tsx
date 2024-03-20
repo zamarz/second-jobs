@@ -48,7 +48,6 @@ const MPEmploymentEarnings = ({ earningsInfo, updateTotalEarnings }: Props) => {
               <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 py-6 mx-auto px-5">
                 {secondJob.childInterests.length > 0 ? (
                   secondJob.childInterests.map((childInterest: Interest) => {
-                    console.log(childInterest, "childInterest");
                     earningsAggregator(childInterest, earningsArray);
                     hoursAggregator(childInterest, hoursArray);
                     return (
