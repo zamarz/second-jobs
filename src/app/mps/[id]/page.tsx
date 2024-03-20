@@ -1,6 +1,6 @@
 "use client";
 
-import { MPData, MPExpensesData } from "@/app/types/types";
+import { MPData, MPExpensesData, UpdateTotalEarnings } from "@/app/types/types";
 import { getMPExpenses, getMPById } from "@/app/utils/api";
 import MPCardIDPage from "@/components/MPCardIDPage";
 import MPInterestCard from "@/components/MPExpenses";
@@ -19,7 +19,7 @@ const MPExpensesPage = () => {
 
   const [totalEarnings, setTotalEarnings] = useState<number>(0);
 
-  const updateTotalEarnings = (value: number) => {
+  const updateTotalEarnings: UpdateTotalEarnings = (value: number) => {
     setTotalEarnings((prevTotal) => prevTotal + value);
   };
 

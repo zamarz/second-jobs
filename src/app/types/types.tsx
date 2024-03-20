@@ -40,3 +40,5 @@ export type ValueExpense = {
   name: string;
   sortOrder: number;
 };
+
+export type UpdateTotalEarnings = (value: number) => void;
