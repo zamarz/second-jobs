@@ -7,13 +7,18 @@ import {
   sumEarnings,
   sumHours,
 } from "../app/utils/functions";
+import { Interest } from "@/app/types/types";
 
-const MPChildInterestAnalysis = ({ childInterestInfo }: any) => {
-  const [childInterestEarnings, setChildInterestEarnings] = useState(0);
-  const [childInterestHours, setChildInterestHours] = useState(0);
+const MPChildInterestAnalysis = ({
+  childInterestInfo,
+}: {
+  childInterestInfo: Interest;
+}) => {
+  const [childInterestEarnings, setChildInterestEarnings] = useState<number>(0);
+  const [childInterestHours, setChildInterestHours] = useState<number>(0);
 
-  let childInterestEarningsArray: any = [];
-  let childInterestHoursArray: any = ["0"];
+  let childInterestEarningsArray: Array<any> = [];
+  let childInterestHoursArray: Array<string> = ["0"];
 
   useEffect(() => {
     sumEarnings(childInterestEarningsArray, setChildInterestEarnings);

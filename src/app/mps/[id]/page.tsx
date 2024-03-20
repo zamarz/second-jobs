@@ -1,6 +1,6 @@
 "use client";
 
-import { MPData, MPExpensesData } from "@/app/types/types";
+import { MPData, MPExpensesData, UpdateTotalEarnings } from "@/app/types/types";
 import { getMPExpenses, getMPById } from "@/app/utils/api";
 import MPCardIDPage from "@/components/MPCardIDPage";
 import MPInterestCard from "@/components/MPExpenses";
@@ -11,7 +11,6 @@ import { useEffect, useState } from "react";
 const MPExpensesPage = () => {
   const params = useParams<{ id: string }>();
   const [singleMPData, setsingleMPData] = useState<MPData | null>(null);
-  // const [singleMPData, setsingleMPData] = useState<Array<any> | null>(null);
 
   const [MPInterestData, setMPInterestData] = useState<MPExpensesData | null>(
     null
@@ -19,7 +18,7 @@ const MPExpensesPage = () => {
 
   const [totalEarnings, setTotalEarnings] = useState<number>(0);
 
-  const updateTotalEarnings = (value: number) => {
+  const updateTotalEarnings: UpdateTotalEarnings = (value: number) => {
     setTotalEarnings((prevTotal) => prevTotal + value);
   };
 
@@ -31,6 +30,7 @@ const MPExpensesPage = () => {
         setsingleMPData(data);
       })
       .catch((err: Error) => {
+        console.log(err);
         setError(true);
       });
     getMPExpenses(params.id)

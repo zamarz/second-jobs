@@ -7,13 +7,19 @@ import {
   sumEarnings,
   sumHours,
 } from "@/app/utils/functions";
+import { Interest, UpdateTotalEarnings, ValueExpense } from "@/app/types/types";
 
-const MPEmploymentEarnings = ({ earningsInfo, updateTotalEarnings }: any) => {
-  const [earnings, setEarnings] = useState(0);
-  const [hours, setHours] = useState(0);
+type Props = {
+  earningsInfo: ValueExpense;
+  updateTotalEarnings: UpdateTotalEarnings;
+};
 
-  let earningsArray: any = ["0"];
-  let hoursArray: any = ["0"];
+const MPEmploymentEarnings = ({ earningsInfo, updateTotalEarnings }: Props) => {
+  const [earnings, setEarnings] = useState<number>(0);
+  const [hours, setHours] = useState<number>(0);
+
+  let earningsArray: Array<string> = ["0"];
+  let hoursArray: Array<string> = ["0"];
 
   useEffect(() => {
     sumEarnings(earningsArray, setEarnings);
@@ -30,7 +36,7 @@ const MPEmploymentEarnings = ({ earningsInfo, updateTotalEarnings }: any) => {
         {earningsInfo.name}
       </h4>
       <div className="py-3 mx-auto">
-        {earningsInfo.interests.map((secondJob: any) => {
+        {earningsInfo.interests.map((secondJob: Interest) => {
           earningsAggregator(secondJob, earningsArray);
           hoursAggregator(secondJob, hoursArray);
           return (
@@ -41,7 +47,7 @@ const MPEmploymentEarnings = ({ earningsInfo, updateTotalEarnings }: any) => {
               <br></br>
               <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 py-6 mx-auto px-5">
                 {secondJob.childInterests.length > 0 ? (
-                  secondJob.childInterests.map((childInterest: any) => {
+                  secondJob.childInterests.map((childInterest: Interest) => {
                     earningsAggregator(childInterest, earningsArray);
                     hoursAggregator(childInterest, hoursArray);
                     return (

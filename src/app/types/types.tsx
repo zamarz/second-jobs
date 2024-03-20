@@ -40,3 +40,15 @@ export type ValueExpense = {
   name: string;
   sortOrder: number;
 };
+
+export type UpdateTotalEarnings = (value: number) => void;
+
+export type Interest = {
+  childInterests: Array<any>;
+  createdWhen: any;
+  deletedWhen: any;
+  id: number;
+  interest: string;
+  isCorrection: boolean;
+  lastAmendedWhen: string;
+};

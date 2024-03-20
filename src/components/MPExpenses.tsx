@@ -1,8 +1,17 @@
 import Loading from "@/app/loading";
 import MPInterestAnalysis from "./MPInterestAnalysis";
-import { ValueExpense } from "@/app/types/types";
+import {
+  MPExpensesData,
+  UpdateTotalEarnings,
+  ValueExpense,
+} from "@/app/types/types";
 
-const MPInterestCard = ({ mpInterestInfo, updateTotalEarnings }: any) => {
+type Props = {
+  mpInterestInfo: MPExpensesData | null;
+  updateTotalEarnings: UpdateTotalEarnings;
+};
+
+const MPInterestCard = ({ mpInterestInfo, updateTotalEarnings }: Props) => {
   if (mpInterestInfo === undefined || mpInterestInfo === null) {
     return <Loading />;
   }

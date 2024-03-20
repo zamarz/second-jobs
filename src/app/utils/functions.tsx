@@ -1,4 +1,6 @@
-export const earningsAggregator = (array1: any, array2: any) => {
+import { Interest } from "../types/types";
+
+export const earningsAggregator = (array1: Interest, array2: Array<string>) => {
   const regexAmount = /£([\d,]+)/g;
   const priceEarnings = array1.interest.match(regexAmount);
 
@@ -8,8 +10,11 @@ export const earningsAggregator = (array1: any, array2: any) => {
   }
 };
 
-export const sumEarnings = (arrayofEarnings: any, stateFunction: any) => {
-  const newEarnings = arrayofEarnings.map((earning: any) => {
+export const sumEarnings = (
+  arrayofEarnings: Array<string>,
+  stateFunction: React.Dispatch<React.SetStateAction<number>>
+) => {
+  const newEarnings = arrayofEarnings.map((earning: string) => {
     return parseFloat(earning.replace(/,/g, ""));
   });
 
@@ -18,7 +23,10 @@ export const sumEarnings = (arrayofEarnings: any, stateFunction: any) => {
   stateFunction(addEarnings);
 };
 
-export const hoursAggregator = (array1: any, array2: any) => {
+export const hoursAggregator = (
+  array1: Interest,
+  array2: Array<string | number>
+) => {
   const regexHours = /Hours: (\d+(?:\.\d+)?)(?: hrs| mins|hours| hr)/;
   const hoursMatch = array1.interest.match(regexHours);
 
@@ -30,7 +38,10 @@ export const hoursAggregator = (array1: any, array2: any) => {
   }
 };
 
-export const sumHours = (arrayofHours: any, stateFunction: any) => {
+export const sumHours = (
+  arrayofHours: Array<string>,
+  stateFunction: React.Dispatch<React.SetStateAction<number>>
+) => {
   const newHours = arrayofHours.map((hour: string) => {
     return parseFloat(hour);
   });
@@ -40,7 +51,7 @@ export const sumHours = (arrayofHours: any, stateFunction: any) => {
   stateFunction(addHours);
 };
 
-export const valueAggregator = (array1: any, array2: any) => {
+export const valueAggregator = (array1: Interest, array2: Array<string>) => {
   const regexValue = /(donation in kind:| value:|value) £(\d+(?:\.|,\d+)?)/;
   const valueMatch = array1.interest.match(regexValue);
   if (valueMatch) {
@@ -50,7 +61,10 @@ export const valueAggregator = (array1: any, array2: any) => {
   }
 };
 
-export const valueSum = (arrayofValues: any, stateFunction: any) => {
+export const valueSum = (
+  arrayofValues: Array<string>,
+  stateFunction: React.Dispatch<React.SetStateAction<number>>
+) => {
   const newValues = arrayofValues.map((value: string) => {
     return parseFloat(value.replace(/,/g, ""));
   });

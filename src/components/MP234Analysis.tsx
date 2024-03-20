@@ -1,12 +1,13 @@
 "use client";
 
+import { Interest } from "@/app/types/types";
 import { valueAggregator, valueSum } from "@/app/utils/functions";
 import { useEffect, useState } from "react";
 
-const MP234Analysis = ({ secondJob }: any) => {
-  const [values, setValues] = useState(0);
+const MP234Analysis = ({ secondJob }: { secondJob: Interest }) => {
+  const [values, setValues] = useState<number>(0);
 
-  let valuesArray: any = ["0"];
+  let valuesArray: Array<string> = ["0"];
 
   useEffect(() => {
     valueSum(valuesArray, setValues);
