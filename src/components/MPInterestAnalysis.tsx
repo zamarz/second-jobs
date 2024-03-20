@@ -1,9 +1,14 @@
-import MP234Analysis from "./MP234Analysis";
+import { UpdateTotalEarnings, ValueExpense } from "@/app/types/types";
 import MP234Section from "./MP234Section";
 import MPChildInterestAnalysis from "./MPChildInterestAnalysis";
 import MPEmploymentEarnings from "./MPEmploymentEarnings";
 
-const MPInterestAnalysis = ({ interestInfo, updateTotalEarnings }: any) => {
+type Props = {
+  interestInfo: ValueExpense;
+  updateTotalEarnings: UpdateTotalEarnings;
+};
+
+const MPInterestAnalysis = ({ interestInfo, updateTotalEarnings }: Props) => {
   return (
     <div>
       {interestInfo.name === "1. Employment and earnings" ? (
