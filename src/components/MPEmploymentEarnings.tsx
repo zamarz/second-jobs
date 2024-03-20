@@ -40,7 +40,7 @@ const MPEmploymentEarnings = ({ earningsInfo, updateTotalEarnings }: Props) => {
           earningsAggregator(secondJob, earningsArray);
           hoursAggregator(secondJob, hoursArray);
           return (
-            <div>
+            <div key={secondJob.id}>
               <h3 className="font-semibold mx-auto py-3 text-center text-xl text-balance underline bg-tertiary-alt">
                 {secondJob.interest}
               </h3>
