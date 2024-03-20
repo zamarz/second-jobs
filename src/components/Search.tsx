@@ -3,18 +3,21 @@
 import { getMPSearch } from "@/app/utils/api";
 import { useEffect, useState } from "react";
 import MPCard from "./MPCard";
+import { GetMPData } from "@/app/types/types";
 
 const Search = () => {
-  const [searchTerm, setSearchTerm] = useState("");
-  const [searchAPIData, setSearchAPIData] = useState({});
+  const [searchTerm, setSearchTerm] = useState<string>("");
+  const [searchAPIData, setSearchAPIData] = useState<GetMPData>(
+    {} as GetMPData
+  );
 
   useEffect(() => {
     if (searchTerm !== "") {
       getMPSearch(searchTerm)
-        .then((data: any) => {
+        .then((data: GetMPData) => {
           setSearchAPIData(data);
         })
-        .catch((err: string) => {
+        .catch((err: Error) => {
           console.log(err);
         });
     }

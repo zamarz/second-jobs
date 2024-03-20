@@ -11,7 +11,6 @@ import { useEffect, useState } from "react";
 const MPExpensesPage = () => {
   const params = useParams<{ id: string }>();
   const [singleMPData, setsingleMPData] = useState<MPData | null>(null);
-  // const [singleMPData, setsingleMPData] = useState<Array<any> | null>(null);
 
   const [MPInterestData, setMPInterestData] = useState<MPExpensesData | null>(
     null
@@ -31,6 +30,7 @@ const MPExpensesPage = () => {
         setsingleMPData(data);
       })
       .catch((err: Error) => {
+        console.log(err);
         setError(true);
       });
     getMPExpenses(params.id)
