@@ -31,7 +31,7 @@ const MP234Section = ({ interestInfo, updateTotalEarnings }: Props) => {
       <div className="py-3 mx-auto grid grid-cols-1 lg:grid-cols-3 px-4 gap-4">
         {interestInfo.interests.map((secondJob: Interest) => {
           valueAggregator(secondJob, valuesArray);
-          return <MP234Analysis id={secondJob.id} secondJob={secondJob} />;
+          return <MP234Analysis key={secondJob.id} secondJob={secondJob} />;
         })}
       </div>
       <div className="text-center text-2xl py-3 mx-auto w-1/2 rounded border-4 border-primary bg-tertiary-alt border-solid hover:border-double shadow-xl">
