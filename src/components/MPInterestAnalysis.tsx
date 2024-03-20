@@ -1,4 +1,4 @@
-import { UpdateTotalEarnings, ValueExpense } from "@/app/types/types";
+import { Interest, UpdateTotalEarnings, ValueExpense } from "@/app/types/types";
 import MP234Section from "./MP234Section";
 import MPChildInterestAnalysis from "./MPChildInterestAnalysis";
 import MPEmploymentEarnings from "./MPEmploymentEarnings";
@@ -33,7 +33,7 @@ const MPInterestAnalysis = ({ interestInfo, updateTotalEarnings }: Props) => {
             {interestInfo.name}
           </h4>
           <div className="py-5 mx-auto my-2 grid grid-cols-1 md:grid-cols-2 gap-4 px-4 ">
-            {interestInfo.interests.map((secondJob: any) => {
+            {interestInfo.interests.map((secondJob: Interest) => {
               return (
                 <div className="text-center py-3 mx-auto px-4 w-full border-2 rounded border-secondary bg-tertiary-light/40">
                   <h3 className=" mx-auto py-3  text-xl text-balance">
@@ -41,7 +41,7 @@ const MPInterestAnalysis = ({ interestInfo, updateTotalEarnings }: Props) => {
                   </h3>
 
                   {secondJob.childInterests.length > 0 ? (
-                    secondJob.childInterests.map((childInterest: any) => {
+                    secondJob.childInterests.map((childInterest: Interest) => {
                       return (
                         <MPChildInterestAnalysis
                           key={childInterest.id}
