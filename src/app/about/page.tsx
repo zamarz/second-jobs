@@ -18,7 +18,7 @@ const About = () => {
           making from additional income more accessible. Most of the data in the
           project is taken from the{" "}
           <Link
-            className="underline hover:bg-tertiary-light"
+            className="underline hover:bg-tertiary-alt"
             href="https://developer.parliament.uk/"
             target="_blank"
           >
@@ -26,23 +26,45 @@ const About = () => {
           </Link>
         </p>
         <p className="text-xl py-4">
+          These interests{" "}
+          <span className="bg-tertiary-light">
+            remain on the Register for 12 months
+          </span>{" "}
+          after the interest has ended, as declared{" "}
+          <Link
+            className="underline hover:bg-tertiary-alt"
+            href="https://www.parliament.uk/mps-lords-and-offices/standards-and-financial-interests/parliamentary-commissioner-for-standards/registers-of-interests/register-of-members-financial-interests/"
+            target="_blank"
+          >
+            here
+          </Link>
+          . This means the site is currently not displaying historical data and
+          only has the most recent data.
+        </p>
+        <p className="text-xl py-4">
           However, the way that MPs are allowed to register these additional
           interests sometimes makes it a litle tricky to work with the data.
-          There doesn't seem to be a uniform way in which they have to declare
-          interests, which leads to a lot of variation.
+          There doesn't seem to be a{" "}
+          <span className="bg-tertiary-light">
+            uniform way in which they have to declare interests
+          </span>
+          , which leads to a lot of variation.
         </p>
         <p className="text-xl py-4">
           Additionally, if they earn rent from property they own, it appears
           they don't have to declare how much they are earning from it. They
-          only have to declare that they are earning the money. The same applies
-          for property they own as we don't know how much it is worth.
+          only have to declare that they are earning the money.
         </p>
         <p className="text-xl py-4">
           I have added 'Totals' to each of the first five or so registered
-          interest sections. This works out how much money an MP is making.
-          Despite this, not all money will be declared in these 'Total' areas.
-          Always make sure to double check the amounts in the descriptions of
-          each interest to ensure that these values haven't been missed.
+          interest sections. This roughly works out how much money an MP is
+          making. Despite this,{" "}
+          <span className="bg-tertiary-light">
+            not all money will be declared{" "}
+          </span>{" "}
+          in these 'Total' areas. Always make sure to double check the amounts
+          in the descriptions of each interest to ensure that these values
+          haven't been missed.
         </p>
       </div>
     </section>
