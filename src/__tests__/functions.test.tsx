@@ -1,4 +1,7 @@
-import { earningsAggregator } from "../app/utils/functions";
+"use client";
+
+import { useState } from "react";
+import { earningsAggregator, sumEarnings } from "../app/utils/functions";
 
 describe("earningsAggregator", () => {
   test("adds an item to an array", () => {
@@ -53,3 +56,22 @@ describe("earningsAggregator", () => {
     expect(array2).toEqual(["0"]);
   });
 });
+
+describe("sumEarnings", () => {
+  test.only("adds numbers and updates state", () => {
+    const Test = () => {
+      const [earnings, setEarnings] = useState(0);
+      let earningsArray = ["1", "1", "1"];
+      sumEarnings(earningsArray, setEarnings);
+      expect(earnings).toEqual(3);
+    };
+  });
+  test.only("removes commas correctly", () => {
+    const Test = () => {
+      const [earnings, setEarnings] = useState(0);
+      let earningsArray = ["1,000", "1,500", "1"];
+      sumEarnings(earningsArray, setEarnings);
+      expect(earnings).toEqual(3500);
+    };
+  });
+}); //next test will be removes commas
