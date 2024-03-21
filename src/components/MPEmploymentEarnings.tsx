@@ -29,6 +29,7 @@ const MPEmploymentEarnings = ({ earningsInfo, updateTotalEarnings }: Props) => {
   useEffect(() => {
     updateTotalEarnings(earnings);
   }, [earnings]);
+  console.log(earningsArray);
 
   return (
     <div>
@@ -37,7 +38,6 @@ const MPEmploymentEarnings = ({ earningsInfo, updateTotalEarnings }: Props) => {
       </h4>
       <div className="py-3 mx-auto">
         {earningsInfo.interests.map((secondJob: Interest) => {
-          console.log(secondJob, "secondjob");
           earningsAggregator(secondJob, earningsArray);
           hoursAggregator(secondJob, hoursArray);
           return (
