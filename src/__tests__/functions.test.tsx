@@ -147,7 +147,7 @@ describe("sumHours", () => {
 });
 
 describe("valueAggregator", () => {
-  test.only("adds new hour to array", () => {
+  test("adds new hour to array", () => {
     const array1 = {
       childInterests: [1, 2, 3],
       createdWhen: null,
@@ -164,7 +164,7 @@ describe("valueAggregator", () => {
 
     expect(array2).toEqual(["1", "15"]);
   });
-  test.only("only extracts value and not other numbers", () => {
+  test("only extracts value and not other numbers", () => {
     const array1 = {
       childInterests: [1, 2, 3],
       createdWhen: null,
@@ -180,5 +180,16 @@ describe("valueAggregator", () => {
     valueAggregator(array1, array2);
 
     expect(array2).toEqual(["0", "3"]);
+  });
+});
+
+describe("valueSum", () => {
+  test.only("adds numbers and updates state", () => {
+    const Test = () => {
+      const [value, setValue] = useState(0);
+      let valueArray = ["1", "1", "1"];
+      sumEarnings(valueArray, setValue);
+      expect(value).toEqual(3);
+    };
   });
 });
