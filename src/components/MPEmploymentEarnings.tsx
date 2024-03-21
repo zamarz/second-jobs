@@ -29,7 +29,6 @@ const MPEmploymentEarnings = ({ earningsInfo, updateTotalEarnings }: Props) => {
   useEffect(() => {
     updateTotalEarnings(earnings);
   }, [earnings]);
-  console.log(earningsArray);
 
   return (
     <div>
