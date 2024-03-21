@@ -14,6 +14,7 @@ const HomePage = () => {
           alt="An image of Parliament"
           width={500}
           height={500}
+          priority={true}
           className="py-5"
         />{" "}
         <h2 className="text-3xl py-5 font-semibold">
@@ -28,7 +29,7 @@ const HomePage = () => {
         <p className="text-2xl">
           Most data is taken from the{" "}
           <Link
-            className="underline hover:bg-tertiary-light"
+            className="underline hover:bg-tertiary-light dark:hover:bg-tertiary-light/50"
             href="https://developer.parliament.uk/"
             target="_blank"
           >
@@ -37,7 +38,10 @@ const HomePage = () => {
         </p>
         <p className="text-xl py-3">
           Read more about this in our{" "}
-          <Link className="font-semibold underline" href="/about">
+          <Link
+            className="font-semibold underline hover:bg-tertiary-light dark:hover:bg-tertiary-light/50"
+            href="/about"
+          >
             About
           </Link>{" "}
           section.
