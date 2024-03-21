@@ -184,7 +184,7 @@ describe("valueAggregator", () => {
 });
 
 describe("valueSum", () => {
-  test.only("adds numbers and updates state", () => {
+  test("adds numbers and updates state", () => {
     const Test = () => {
       const [value, setValue] = useState(0);
       let valueArray = ["1", "1", "1"];
