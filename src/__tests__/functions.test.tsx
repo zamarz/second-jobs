@@ -1,7 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import { earningsAggregator, sumEarnings } from "../app/utils/functions";
+import {
+  earningsAggregator,
+  hoursAggregator,
+  sumEarnings,
+} from "../app/utils/functions";
 
 describe("earningsAggregator", () => {
   test("adds an item to an array", () => {
@@ -58,7 +62,7 @@ describe("earningsAggregator", () => {
 });
 
 describe("sumEarnings", () => {
-  test.only("adds numbers and updates state", () => {
+  test("adds numbers and updates state", () => {
     const Test = () => {
       const [earnings, setEarnings] = useState(0);
       let earningsArray = ["1", "1", "1"];
@@ -66,7 +70,7 @@ describe("sumEarnings", () => {
       expect(earnings).toEqual(3);
     };
   });
-  test.only("removes commas correctly", () => {
+  test("removes commas correctly", () => {
     const Test = () => {
       const [earnings, setEarnings] = useState(0);
       let earningsArray = ["1,000", "1,500", "1"];
@@ -74,4 +78,58 @@ describe("sumEarnings", () => {
       expect(earnings).toEqual(3500);
     };
   });
-}); //next test will be removes commas
+});
+
+describe("hoursAggregator", () => {
+  test.only("adds new hour to array", () => {
+    const array1 = {
+      childInterests: [1, 2, 3],
+      createdWhen: null,
+      deletedWhen: null,
+      id: 51517,
+      interest:
+        " From 16 January 2023, Partner in Warre Constable LLP, The Barn, Lamport Manor, Old Road, Lamport NN6 9HF, a family business providing professional advice with respect to property management, Hours: 15 hrs  mediation services and legal and financial matters.",
+      isCorrection: false,
+      lastAmendedWhen: "2023-05-03T13:35:41.933",
+    };
+    const array2 = [0];
+
+    hoursAggregator(array1, array2);
+
+    expect(array2).toEqual([0, 15]);
+  });
+  test.only("only extracts hour and not other numbers", () => {
+    const array1 = {
+      childInterests: [1, 2, 3],
+      createdWhen: null,
+      deletedWhen: null,
+      id: 51517,
+      interest:
+        " From 16 January 2023, Partner in Warre Constable LLP, The Barn, Lamport Manor, Old Road, Lamport £234 NN6 9HF, a family business providing professional advice with respect to property management, Hours: 15 hrs  mediation services and legal and financial matters.",
+      isCorrection: false,
+      lastAmendedWhen: "2023-05-03T13:35:41.933",
+    };
+    const array2 = [0];
+
+    hoursAggregator(array1, array2);
+
+    expect(array2).toEqual([0, 15]);
+  });
+  test.only("Converts mins to hours", () => {
+    const array1 = {
+      childInterests: [1, 2, 3],
+      createdWhen: null,
+      deletedWhen: null,
+      id: 51517,
+      interest:
+        " From 16 January 2023, Partner in Warre Constable LLP, The Barn, Lamport Manor, Old Road, Lamport £234 NN6 9HF, a family business providing professional advice with respect to property management, Hours: 30 mins  mediation services and legal and financial matters.",
+      isCorrection: false,
+      lastAmendedWhen: "2023-05-03T13:35:41.933",
+    };
+    const array2 = [0];
+
+    hoursAggregator(array1, array2);
+
+    expect(array2).toEqual([0, 0.5]);
+  });
+});
