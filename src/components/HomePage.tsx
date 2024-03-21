@@ -1,6 +1,9 @@
 import Link from "next/link";
 import Search from "./Search";
 import Image from "next/image";
+import ReactGA from "react-ga4";
+
+ReactGA.initialize(`${process.env.NEXT_PUBLIC_MEASUREMENTID}`);
 
 const HomePage = () => {
   return (
