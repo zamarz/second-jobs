@@ -1,8 +1,11 @@
 import { Interest } from "../types/types";
 
-export const earningsAggregator = (array1: Interest, array2: Array<string>) => {
+export const earningsAggregator = (
+  object1: Interest,
+  array2: Array<string>
+) => {
   const regexAmount = /£([\d,]+)/g;
-  const priceEarnings = array1.interest.match(regexAmount);
+  const priceEarnings = object1.interest.match(regexAmount);
 
   if (priceEarnings !== null) {
     const removePound = priceEarnings[0].slice(1, priceEarnings[0].length);
