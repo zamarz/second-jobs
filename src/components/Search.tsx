@@ -26,7 +26,9 @@ const Search = () => {
   return (
     <section>
       <div>
-        <label className="mx-3 text-2xl px-3">Search for an MP: </label>
+        <label htmlFor="userSearch" className="mx-3 text-2xl px-3">
+          Search for an MP:{" "}
+        </label>
         <input
           className="border-2 border-secondary px-9 py-2 dark:focus:border-tertiary-alt dark:text-black"
           placeholder="Enter an MP's name..."
