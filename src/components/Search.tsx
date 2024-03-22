@@ -37,7 +37,7 @@ const Search = () => {
           Search
         </button>
       </div>
-      <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-6 mx-3 py-3">
+      <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-6 mx-auto gap-2 py-3">
         {Object.keys(searchAPIData).length > 0 ? (
           searchAPIData.items.map((mp: any) => {
             return <MPCard key={mp.value.id} mpInfo={mp.value} />;
