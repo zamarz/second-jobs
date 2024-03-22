@@ -17,7 +17,7 @@ const Contact = () => {
           Spot a bug, got a recommendation to make, or just want to say hi? Feel
           free to send me an{" "}
           <Link
-            className="underline hover:bg-tertiary-light"
+            className="underline hover:bg-tertiary-alt"
             href="mailto:zmarzouk23@gmail.com"
             target="_blank"
           >
@@ -28,7 +28,7 @@ const Contact = () => {
         <p className="text-xl py-4">
           Alternatively, check out my Github{" "}
           <Link
-            className="underline hover:bg-tertiary-light"
+            className="underline hover:bg-tertiary-alt"
             href="https://github.com/zamarz"
             target="_blank"
           >
@@ -36,7 +36,7 @@ const Contact = () => {
           </Link>{" "}
           or{" "}
           <Link
-            className="underline hover:bg-tertiary-light"
+            className="underline hover:bg-tertiary-alt"
             href="https://www.paypal.com/donate/?hosted_button_id=QHRKJF2CZMG54"
             target="_blank"
           >
