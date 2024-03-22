@@ -4,7 +4,7 @@ import Link from "next/link";
 const About = () => {
   return (
     <section className="min-h-screen mx-auto container px-10 py-10">
-      <div className="text-center text-pretty flex flex-col justify-center items-center ">
+      <div className="text-center text-balance flex flex-col justify-center items-center ">
         <Image
           src={"/assets/parliament_2.jpg"}
           alt="An image of Parliament in the evening"
@@ -13,6 +13,7 @@ const About = () => {
           className="py-5"
         />
         <h3 className="text-3xl md:text-4xl py-3 mx-auto">About</h3>
+        <h2 className="text-2xl pt-3">Why?</h2>
         <p className="text-xl py-4">
           This is a project which aims to make the data around how much MPs are
           making from additional income more accessible. Most of the data in the
@@ -25,8 +26,10 @@ const About = () => {
             Parliament Members API.
           </Link>
         </p>
+        <br></br>
+        <h2 className="text-2xl pt-3">The data</h2>
         <p className="text-xl py-4">
-          These interests{" "}
+          The interests{" "}
           <span className="bg-tertiary-light">
             remain on the Register for 12 months
           </span>{" "}
@@ -55,12 +58,14 @@ const About = () => {
           they don't have to declare how much they are earning from it. They
           only have to declare that they are earning the money.
         </p>
+        <br></br>
+        <h2 className="text-2xl pt-3">Additional data</h2>
         <p className="text-xl py-4">
           I have added 'Totals' to each of the first five or so registered
           interest sections. This roughly works out how much money an MP is
           making. Despite this,{" "}
           <span className="bg-tertiary-light">
-            not all money will be declared{" "}
+            not all money will be declared
           </span>{" "}
           in these 'Total' areas. Always make sure to double check the amounts
           in the descriptions of each interest to ensure that these values
