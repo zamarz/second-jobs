@@ -20,9 +20,9 @@ const HomePage = () => {
         <h2 className="text-3xl py-5 font-semibold">
           What second jobs does my MP have?
         </h2>
-        <h4 className="text-2xl">
+        <h3 className="text-2xl">
           Find out what second jobs and additonal sources of income your MP has.
-        </h4>
+        </h3>
         <div className="py-5">
           <Search />
         </div>
