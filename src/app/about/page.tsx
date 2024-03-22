@@ -30,7 +30,7 @@ const About = () => {
         <h2 className="text-2xl pt-3">The data</h2>
         <p className="text-xl py-4">
           The interests{" "}
-          <span className="bg-tertiary-light">
+          <span className=" underline decoration-primary">
             remain on the Register for 12 months
           </span>{" "}
           after the interest has ended, as declared{" "}
@@ -48,7 +48,7 @@ const About = () => {
           However, the way that MPs are allowed to register these additional
           interests sometimes makes it a litle tricky to work with the data.
           There doesn't seem to be a{" "}
-          <span className="bg-tertiary-light">
+          <span className="underline decoration-primary">
             uniform way in which they have to declare interests
           </span>
           , which leads to a lot of variation.
@@ -59,12 +59,12 @@ const About = () => {
           only have to declare that they are earning the money.
         </p>
         <br></br>
-        <h2 className="text-2xl pt-3">Additional data</h2>
+        <h2 className="text-2xl pt-3">Analysis</h2>
         <p className="text-xl py-4">
           I have added 'Totals' to each of the first five or so registered
           interest sections. This roughly works out how much money an MP is
           making. Despite this,{" "}
-          <span className="bg-tertiary-light">
+          <span className="underline decoration-primary">
             not all money will be declared
           </span>{" "}
           in these 'Total' areas. Always make sure to double check the amounts
