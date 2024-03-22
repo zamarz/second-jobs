@@ -16,6 +16,7 @@ const MPCard = ({ mpInfo }: { mpInfo: Value | undefined }) => {
           alt="An image of the MP"
           height={200}
           width={200}
+          priority={true}
         />
         <h3>{mpInfo.nameDisplayAs}</h3>
         <p>{mpInfo.latestParty.name}</p>

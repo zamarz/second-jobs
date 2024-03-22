@@ -17,6 +17,7 @@ const MPCardIDPage = ({ mpInfo }: { mpInfo: Value | undefined }) => {
             alt="An image of the MP"
             height={300}
             width={300}
+            priority={true}
           />
         </div>
         <h3 className="text-2xl font-bold py-2">{mpInfo.nameDisplayAs}</h3>
