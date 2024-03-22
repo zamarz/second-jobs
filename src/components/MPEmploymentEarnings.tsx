@@ -41,7 +41,7 @@ const MPEmploymentEarnings = ({ earningsInfo, updateTotalEarnings }: Props) => {
           hoursAggregator(secondJob, hoursArray);
           return (
             <div key={secondJob.id}>
-              <h3 className="font-semibold mx-auto py-3 text-center text-xl text-balance underline bg-tertiary-alt">
+              <h3 className="font-semibold mx-auto py-3 text-center text-xl text-balance underline bg-tertiary-alt dark:bg-tertiary-alt/70">
                 {secondJob.interest}
               </h3>
               <br></br>
@@ -64,7 +64,7 @@ const MPEmploymentEarnings = ({ earningsInfo, updateTotalEarnings }: Props) => {
             </div>
           );
         })}
-        <div className="text-3xl py-5 text-center border-primary border-4 mx-auto w-1/2 rounded border-solid hover:border-double shadow-xl bg-tertiary-alt">
+        <div className="text-3xl py-5 text-center border-primary border-4 mx-auto w-1/2 rounded border-solid hover:border-double shadow-xl bg-tertiary-alt dark:bg-tertiary-alt/70">
           <div className="py-2 mx-auto">
             <span className="font-semibold">Total Value:</span> £{earnings}
           </div>

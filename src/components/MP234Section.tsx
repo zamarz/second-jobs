@@ -34,7 +34,7 @@ const MP234Section = ({ interestInfo, updateTotalEarnings }: Props) => {
           return <MP234Analysis key={secondJob.id} secondJob={secondJob} />;
         })}
       </div>
-      <div className="text-center text-2xl py-3 mx-auto w-1/2 rounded border-4 border-primary bg-tertiary-alt border-solid hover:border-double shadow-xl">
+      <div className="text-center text-2xl py-3 mx-auto w-1/2 rounded border-4 border-primary bg-tertiary-alt dark:bg-tertiary-alt/70 border-solid hover:border-double shadow-xl">
         <span className="font-bold">Total Value:</span> £{values}
       </div>
     </div>
