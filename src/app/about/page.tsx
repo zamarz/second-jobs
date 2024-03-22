@@ -19,7 +19,7 @@ const About = () => {
           making from additional income more accessible. Most of the data in the
           project is taken from the{" "}
           <Link
-            className="underline hover:bg-tertiary-alt"
+            className="underline hover:bg-tertiary-alt dark:hover:bg-tertiary-light/60"
             href="https://developer.parliament.uk/"
             target="_blank"
           >
@@ -35,7 +35,7 @@ const About = () => {
           </span>{" "}
           after the interest has ended, as declared{" "}
           <Link
-            className="underline hover:bg-tertiary-alt"
+            className="underline hover:bg-tertiary-alt dark:hover:bg-tertiary-light/60"
             href="https://www.parliament.uk/mps-lords-and-offices/standards-and-financial-interests/parliamentary-commissioner-for-standards/registers-of-interests/register-of-members-financial-interests/"
             target="_blank"
           >
