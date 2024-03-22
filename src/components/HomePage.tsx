@@ -12,10 +12,10 @@ const HomePage = () => {
         <Image
           src={"/assets/parliament.jpg"}
           alt="An image of Parliament"
-          width={500}
-          height={500}
+          width={400}
+          height={400}
           priority={true}
-          className="py-5"
+          className="py-5 w-auto h-auto"
         />{" "}
         <h2 className="text-3xl py-5 font-semibold">
           What second jobs does my MP have?

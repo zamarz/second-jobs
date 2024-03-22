@@ -8,9 +8,10 @@ const Contact = () => {
         <Image
           src={"/assets/uk_telephone_contact.jpg"}
           alt="An image of two red telephone boxes with the London Eye behind them"
-          width={500}
-          height={500}
-          className="py-5"
+          width={400}
+          height={400}
+          className="py-5 w-auto h-auto"
+          priority={true}
         />
         <h3 className="text-3xl md:text-4xl py-3 mx-auto">Contact Me</h3>
         <p className="text-xl py-4">

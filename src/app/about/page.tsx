@@ -10,7 +10,8 @@ const About = () => {
           alt="An image of Parliament in the evening"
           width={500}
           height={500}
-          className="py-5"
+          className="py-5 w-auto h-auto"
+          priority={true}
         />
         <h3 className="text-3xl md:text-4xl py-3 mx-auto">About</h3>
         <h2 className="text-2xl pt-3">Why?</h2>
